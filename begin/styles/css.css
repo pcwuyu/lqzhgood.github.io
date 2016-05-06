@@ -3,6 +3,10 @@ body{
     color: white;
 }
 
+#allDIV {
+    width: 600px;
+    margin: 8px auto;
+}
 #main {
     color: #111;
     width: 500px;
