@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul>
+            
+        </ul>
+    </div>
+    
+    <script src="../js/jquery-2.2.3.min.js"></script>
+    <script>
+        getXML();
+        function getXML(){
+            $.ajax({
+                url:"list.xml",
+                cache:false,
+                dataType:"xml",
+                success:function(xml){
+                    $(xml).find("url").each(function(){
+                        var li = "<li>"+$(this).text();
+                        $("ul").append(li);
+                    });
+                }
+            });
+        }
+        
+    </script>
+</body>
+</html>
