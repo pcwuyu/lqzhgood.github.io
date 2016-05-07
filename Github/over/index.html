@@ -7,7 +7,7 @@
 <body>
     <div>
         <ul>
-            
+            <a href="/123/123.html"></a>
         </ul>
     </div>
     
@@ -21,7 +21,7 @@
                 dataType:"xml",
                 success:function(xml){
                     $(xml).find("url").each(function(){
-                        var li = "<li>"+$(this).text();
+                        var li = "<li> <a href='"+$(this).text()+"'>"+$(this).text()+"</a></li>";
                         $("ul").append(li);
                     });
                 }
