@@ -93,7 +93,34 @@ $(document).ready(function () {
                 $("#btnStick").trigger("click");
                 $("#hdrResult").html("BlackJack").attr("class", "win");
                 $("#imgResult").attr('src', 'images/check.png');
-            } else if (this.total <= 21="" &&="" this.cards.length="=" 5)="" {="" $("#btnstick").trigger("click");="" $("#hdrresult").html("blackjack="" -="" 5card").attr("class",="" "win");="" $("#imgresult").attr('src',="" 'images="" check.png');="" }="" else="" };="" var="" user_card="[];" function="" starttwo()="" fapai();="" fapai()="" do="" flag="true;" index="Math.floor(Math.random()" *="" 52);="" if="" ($.inarray(index,="" user_card)="=" -1)="" user_card[user_card.length]="index;" c="deck[index];" hand.cards[hand.cards.length]="c;" $d="$("<div">").addClass("current_hand").appendTo("#my_hand");
+            } else if (this.total <= 21 && this.cards.length == 5) {
+                $("#btnStick").trigger("click");
+                $("#hdrResult").html("BlackJack - 5card").attr("class", "win");
+                $("#imgResult").attr('src', 'images/check.png');
+            } else {
+
+            }
+        }
+    };
+
+
+    var user_card = [];
+
+    function startTwo() {
+        faPai();
+        faPai();
+    }
+
+    function faPai() {
+        do {
+            var flag = true;
+            var index = Math.floor(Math.random() * 52);
+            if ($.inArray(index, user_card) == -1) {
+                flag = false;
+                user_card[user_card.length] = index;
+                var c = deck[index];
+                hand.cards[hand.cards.length] = c;
+                var $d = $("<div>").addClass("current_hand").appendTo("#my_hand");
 
                 $("<img>").attr("src", "images/cards/" + c.suit + "/" + c.name + ".jpg").appendTo($d).fadeOut("slow").fadeIn("slow");
             }
@@ -136,4 +163,4 @@ $(document).ready(function () {
         $("#btnRestart").toggle();
     }
 
-});</=>
+});

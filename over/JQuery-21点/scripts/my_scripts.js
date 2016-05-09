@@ -76,7 +76,13 @@ $(document).ready(function(){
 		
 		sumCardTotal: function(){
 			this.current_total = 0;
-			for(var i=0;i<this.cards.length;i++){ var="" c="this.cards[i];" this.current_total="" +="c.value;" }="" $("#hdrtotal").html("total:="" "="" );="" if(this.current_total=""> 21){
+			for(var i=0;i<this.cards.length;i++){
+				var c = this.cards[i];
+				this.current_total += c.value;
+			}
+			$("#hdrTotal").html("Total: " + this.current_total );
+			
+			if(this.current_total > 21){
 				$("#btnStick").trigger("click");
 				$("#imgResult").attr('src','images/x2.png');
 				$("#hdrResult").html("BUST!")
@@ -86,7 +92,31 @@ $(document).ready(function(){
 				$("#imgResult").attr('src','images/check.png');
 				$("#hdrResult").html("BlackJack!")
 							   .attr('class', 'win');
-			}else if(this.current_total <= 5="" 21="" &&="" this.cards.length="=" 5){="" $("#btnstick").trigger("click");="" $("#imgresult").attr('src','images="" check.png');="" $("#hdrresult").html("blackjack="" -="" card="" trick!")="" .attr('class',="" 'win');="" }else{="" }="" };="" function="" getrandom(num){="" var="" my_num="Math.floor(Math.random()*num);" return="" my_num;="" deal(){="" for(var="" i="0;i<2;i++){" hit();="" hit(){="" good_card="false;" do{="" index="getRandom(52);" if(="" !$.inarray(index,="" used_cards="" )=""> -1 ){
+			}else if(this.current_total <= 21 && this.cards.length == 5){
+				$("#btnStick").trigger("click");
+				$("#imgResult").attr('src','images/check.png');
+				$("#hdrResult").html("BlackJack - 5 card trick!")
+							   .attr('class', 'win');
+			}else{ }
+		}
+	};
+	
+	function getRandom(num){
+		var my_num = Math.floor(Math.random()*num);
+		return my_num;
+	}
+	
+	function deal(){
+		for(var i=0;i<2;i++){
+			hit();
+		}
+	}
+	
+	function hit(){
+		var good_card = false;
+		do{
+			var index = getRandom(52);
+			if( !$.inArray(index, used_cards ) > -1 ){
 				good_card = true;
 				var c = deck[ index ];
 				used_cards[used_cards.length] = index;
@@ -147,4 +177,4 @@ $(document).ready(function(){
 		$("#btnDeal").toggle()
 					 .trigger('click');
 	});
-});</div></=></this.cards.length;i++){>
+});
