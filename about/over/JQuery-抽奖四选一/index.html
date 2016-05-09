@@ -4,41 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <style>
-        div {
-            float: left;
-            height: 245px;
-            text-align: left;
-            border: 3px solid #000;
-        }
-        
-        #header {
-            width: 100%;
-            border: 0px;
-            height: 50px;
-        }
-        
-        #main {
-            background-color: grey;
-            height: 500px;
-        }
-        
-        #main div {
-            height: 245px;
-        }
-        
-        .no_hover {
-            opacity: 0.5;
-        }
-        
-        .discount {
-            border: 3px solid red;
-        }
-        
-        .no_discount {
-            border: 3px solid blue;
-        }
-    </style>
+    <link rel="stylesheet" href="css/css.css">
 </head>
 
 <body>
@@ -50,11 +16,15 @@
         <div><img src="images/jump2.jpg" alt=""></div>
         <div><img src="images/jump3.jpg" alt=""></div>
         <div><img src="images/jump4.jpg" alt=""></div>
-        <span id='result'></span>
+        <br>
+        <span id='result' style="color:red"></span>
     </div>
     <script src="js/jquery-2.2.3.min.js"></script>
     <script>
         $(document).ready(function () {
+            hideCode();
+            $("#main div").click(checkForCode);
+            
             //增加点击蒙版样式
             //主流做法应该是建立CSS类样式，JS为DOM增加改变样式，做到复用，减少（JS)代码
             //            $("#main div").each(function(){
@@ -70,18 +40,16 @@
             $("#main div").hover(
                 function () {
                     $(this).removeClass("no_hover");
-                }
-                , function () {
+                },
+                function () {
                     $(this).addClass("no_hover");
                 }
             );
 
 
-            $("#main div").click(function () {
-                hideCode();
-                $("#main div").click(checkForCode);
 
-            });
+
+
 
             function getRandom(num) {
                 var my_num = Math.floor(Math.random() * num);
@@ -100,8 +68,8 @@
 
             function checkForCode() {
                 var discount;
-//                if ($.contains(this, document.getElementById("has_discount"))) {
-                 if ($.contains(this, $("#has_discount")[0])) {
+                //                if ($.contains(this, document.getElementById("has_discount"))) {
+                if ($.contains(this, $("#has_discount")[0])) {
                     var my_num = getRandom(100);
                     discount = "<p> CODE:" + my_num + "%</p>";
                 } else {
