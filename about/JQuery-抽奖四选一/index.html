@@ -80,15 +80,48 @@
 
 
 
-<meta name="description">
+<meta name="description" content="Document
+    
+        div {
+            float: left;
+            height: 245px;
+            text-align: left;
+            border: 3px solid #000;
+        }
+        
+        #header {">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2016/05/index.html">
+<meta property="og:url" content="http://yoursite.com/about/JQuery-抽奖四选一/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:description" content="Document
+    
+        div {
+            float: left;
+            height: 245px;
+            text-align: left;
+            border: 3px solid #000;
+        }
+        
+        #header {">
+<meta property="og:image" content="http://yoursite.com/images/jump1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/jump2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/jump3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/jump4.jpg">
+<meta property="og:updated_time" content="2016-05-03T09:53:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:description" content="Document
+    
+        div {
+            float: left;
+            height: 245px;
+            text-align: left;
+            border: 3px solid #000;
+        }
+        
+        #header {">
+<meta name="twitter:image" content="http://yoursite.com/images/jump1.jpg">
 
 
 
@@ -106,7 +139,13 @@
   };
 </script>
 
-  <title> 归档 | Hexo </title>
+  <title>
+  
+
+  
+     | Hexo
+  
+</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,7 +175,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,66 +263,144 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 1 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/01/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-01T05:21:39+08:00"
-              content="2016-05-01" >
-          05-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
     
+      <!DOCTYPE html>
+<html lang="en">
 
-  </section>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            float: left;
+            height: 245px;
+            text-align: left;
+            border: 3px solid #000;
+        }
+        
+        #header {
+            width: 100%;
+            border: 0px;
+            height: 50px;
+        }
+        
+        #main {
+            background-color: grey;
+            height: 500px;
+        }
+        
+        #main div {
+            height: 245px;
+        }
+        
+        .no_hover {
+            opacity: 0.5;
+        }
+        
+        .discount {
+            border: 3px solid red;
+        }
+        
+        .no_discount {
+            border: 3px solid blue;
+        }
+    </style>
+</head>
 
-  
+<body>
+    <div id="header">
+        <h2>Jump for </h2>
+    </div>
+    <div id="main">
+        <div><img src="images/jump1.jpg" alt=""></div>
+        <div><img src="images/jump2.jpg" alt=""></div>
+        <div><img src="images/jump3.jpg" alt=""></div>
+        <div><img src="images/jump4.jpg" alt=""></div>
+        <span id="result"></span>
+    </div>
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //增加点击蒙版样式
+            //主流做法应该是建立CSS类样式，JS为DOM增加改变样式，做到复用，减少（JS)代码
+            //            $("#main div").each(function(){
+            //                this.style.opacity=0.5;
+            //                this.onmouseover=function(){
+            //                    this.style.opacity=1;
+            //                }
+            //                this.onmouseout=function(){
+            //                    this.style.opacity=0.5;
+            //                }                
+            //            });            
+            $("#main div").addClass("no_hover");
+            $("#main div").hover(
+                function () {
+                    $(this).removeClass("no_hover");
+                }
+                , function () {
+                    $(this).addClass("no_hover");
+                }
+            );
 
+
+            $("#main div").click(function () {
+                hideCode();
+                $("#main div").click(checkForCode);
+
+            });
+
+            function getRandom(num) {
+                var my_num = Math.floor(Math.random() * num);
+                return my_num;
+            }
+
+            function hideCode() {
+                var numRand = getRandom(4);
+                $("#main div").each(function (index, value) {
+                    if (numRand == index) {
+                        $(this).append("<span id='has_discount'></span>");
+                        return false;
+                    }
+                });
+            }
+
+            function checkForCode() {
+                var discount;
+//                if ($.contains(this, document.getElementById("has_discount"))) {
+                 if ($.contains(this, $("#has_discount")[0])) {
+                    var my_num = getRandom(100);
+                    discount = "<p> CODE:" + my_num + "%</p>";
+                } else {
+                    discount = "<p>sorry</p>";
+                }
+
+                $("#main div").each(function () {
+                    if ($.contains(this, $("#has_discount")[0])) {
+                        $(this).addClass("discount");
+                    } else {
+                        $(this).addClass("no_discount");
+                    }
+                    $(this).unbind();
+                    $(this).removeClass("no_hover");
+                });
+
+                //                $(this).append(discount);
+                //原生JS
+                //                    var domm = document.createElement("p");
+                //                    domm.innerHTML = discount + "%";
+                //                    this.appendChild(domm);
+
+                $("#result").append(discount);
+            }
+        });
+    </script>
+</body>
+
+</html>
+    
+  </div>
 
 
           </div>
@@ -291,6 +408,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -443,12 +564,6 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
-
 
   
 
