@@ -22,7 +22,7 @@
                 dataType:"xml",
                 success:function(xml){
                     $(xml).find("url").each(function(){
-                        var li = "<li> <a target='_blank' href='"+$(this).text()+"'>"+$(this).text()+"</a></li>";
+                        var li = "<li> <a target='_blank' href='demos/"+$(this).text()+"'>"+$(this).text()+"</a></li>";
                         $("ul").append(li);
                     });
                 }
