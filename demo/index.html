@@ -11,12 +11,13 @@
         </ul>
     </div>
     
-    <script src="../js/jquery-2.2.3.min.js"></script>
+    <script src="js/jquery-2.2.3.min.js"></script>
+    
     <script>
         getXML();
         function getXML(){
             $.ajax({
-                url:"list.xml",
+                url:"demos/list.xml",
                 cache:false,
                 dataType:"xml",
                 success:function(xml){
