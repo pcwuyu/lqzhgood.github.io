@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>百道谷翻译</title>
-<!--
+    <!--
     <script>
         setTimeout(function () {
             var url = "http://translate.google.cn/m/translate";
@@ -18,17 +18,35 @@
         }, 500)
     </script>
 -->
+    <script>
+        window.onload = function () {
+            setTimeout(jiaodian, 3000);
+
+            function jiaodian() {
+                document.getElementsByTagName('frame')[0].contentWindow.document.getElementById('txt').focus();
+                console.log(123);
+            }
+
+        }
+    </script>
 </head>
 
 <frameset rows="40,*" frameborder="1" border="1px" bordercolor="#EEE">
-    <frame src="top.html">
-<!--        <frameset cols="35%,*,36%" frameborder="1" id="main">-->
+    <frame src="top.html" name="top" id="top">
+        <!--        <frameset cols="35%,*,36%" frameborder="1" id="main">-->
         <frameset cols="*,400" frameborder="1" id="main">
             <frame src="http://fanyi.baidu.com/#zh/en/test" scrolling="no" id="baidu" name="baidu" />
             <frame src="http://fanyi.youdao.com/translate?i=test" scrolling="no" id="youdao" name="youdao" />
-<!--            <frame src="http://translate.google.cn/m/translate#auto/cn/test" scrolling="no" name="google" />-->
+            <!--            <frame src="http://translate.google.cn/m/translate#auto/cn/test" scrolling="no" name="google" />-->
         </frameset>
 </frameset>
+<script>
+    alert("123");
+    function jiaodian() {
+        document.getElementsByTagName('frame')[0].contentWindow.document.getElementById('txt').focus();
+        console.log(123);
+    }
+</script>
 
 </html>
 
