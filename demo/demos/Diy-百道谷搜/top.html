@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input id="txt" type="text">
+        <button id="tijiao">subit</button>
+    </div>
+    
+    <script>
+        var sub = document.getElementById("tijiao");
+        sub.onclick=function(){
+            var inputtxt = document.getElementById("txt").value;
+            var bdurl = "http://fanyi.baidu.com/#zh/en/"+inputtxt;
+            var ydurl = "http://fanyi.youdao.com/translate?i="+inputtxt;
+            var ggurl = "http://translate.google.cn/m/translate#auto/cn/"+inputtxt;
+           window.top.baidu.location.href=bdurl;
+           window.top.youdao.location.href=ydurl;
+           window.top.google.location.href=ggurl;
+        }
+    </script>
+</body>
+</html>
