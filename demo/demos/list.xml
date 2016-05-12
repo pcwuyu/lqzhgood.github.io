@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="GB18030"?>
 <urls>
-<url>Diy-百道谷搜</url>
-<url>JQuery-21点</url>
-<url>JQuery-DOM管理</url>
-<url>JQuery-JQueryui表单</url>
-<url>JQuery-动画</url>
-<url>JQuery-抽奖四选一</url>
-<url>JQuery-父选择器区别</url>
-<url>JQuery-终点计时牌</url>
+<url>HTML-百道谷搜</url>
+<url>JS-21点</url>
+<url>JS-DOM管理</url>
+<url>JS-JQueryui表单</url>
+<url>JS-动画</url>
+<url>JS-抽奖四选一</url>
+<url>JS-本地即时贴</url>
+<url>JS-父选择器区别</url>
+<url>JS-终点计时牌</url>
 </urls>
