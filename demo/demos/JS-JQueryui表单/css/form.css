@@ -6,6 +6,10 @@ body {
     font-size: 12px;
 }
 
+#all {
+    width: 600px;
+    margin: 0 auto;
+}
 .form_pad {
     padding-left: 15px;
     padding-right: 15px;
@@ -19,8 +23,14 @@ body {
 
 #slide_dist,
 #slide_weight,
-#slide_height {
+#slide_height,
+#red,
+#blue,
+#green,
+#slide_lat,
+#slide_long{
     margin-bottom: 14px;
+    width: 550px;
 }
 
 #swatch {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>2010 Race Finishers</title>
     <link href="styles/css.css" rel="stylesheet">
 </head>
@@ -32,7 +32,8 @@
             </div>
             <div id="new">
                 <h4>Add New Finisher</h4>
-                <form action="service.php" method="post" id="addRunner" name="addRunner">
+                <form  method="post" id="addRunner" name="addRunner">
+<!--                   action="service.php"-->
                     <label for="txtFirstName"> First Name:</label>
                     <input type="text" name="txtFirstName" id="txtFirstName" />
                     <br> Last Name:
@@ -51,7 +52,7 @@
                     <br>
                     <br>
                     <button name="btnSave" id="btnSave" type="submit">Add Runner</button>
-                    <input type="text" name="action" value="addRunner" id="action">
+                    <input type="text" name="action" value="addRunner" id="action" style="display:none">
                 </form>
             </div>
         </div>
@@ -71,10 +72,21 @@
         <script src="scripts/my_scripts.js"></script>
         <script src="scripts/jquery.idTabs.min.js"></script>
         <script>
-            var zz = [123, 345, 678];
-            console.log($("#addRunner").attr("action"));
+            $(":input").val("123");
+            $("#ddlGender").attr("value","f");
         </script>
     </div>
 </body>
 
 </html>
+
+
+<!--
+食用方法
+先从XML读取数据写入 然后再从本地数据中读取
+点击本地数据项可从本地数据（库）中删除
+-->
+
+<!--
+XML读取和本地读取两种方式
+尝试PHP+SQL的存储与读取-->

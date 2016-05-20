@@ -17,27 +17,77 @@ $(document).ready(function () {
         repeat = false;
         $("#freq").html("Pause");
     });
-    
-    $("#addRunner").submit(function(){
+
+    $("#addRunner").submit(function () {
         return false;
     })
-    
-    $("#btnSave").click(function(){
-        var data = $("#btnSave :input").serializeArray();
-        $.post($("#addRunner").attr("action"),data,function(json){
-            if (json.status == "fail"){
-                alert(json.message);
+
+    $("#btnSave").click(creatRunner);
+
+    function creatRunner() {
+        //        var data = $("#addRunner :input").serializeArray();
+        //        $.post($("#addRunner").attr("action"),data,function(json){
+        //            if (json.status == "fail"){
+        //                alert(json.message);
+        //            }
+        //            if (json.status == "success"){
+        //                alert(json.message);
+        //                clearInput();
+        //            }
+        //        },"json")
+        //      SQL存储改为本地存储        
+        var timer = new Date().getTime();
+        var data = {
+             FN: $("#addRunner input:eq(0)").val()
+            , LN: $("#addRunner input:eq(1)").val()
+            , gender: $("#ddlGender").val()
+            , min: $("#addRunner input:eq(2)").val()
+            , sec: $("#addRunner input:eq(3)").val()
+        , };
+        data.name="run"+timer;
+        var runnerArray = getrunnerArray();
+        runnerArray.push(data);
+        localStorage.setItem("runnerArray", JSON.stringify(runnerArray));
+
+        showrunnerArray();
+    }
+
+    function showrunnerArray() {
+        var runnerArray = getrunnerArray();
+        for (var i = 0; i < runnerArray.length; i++) {
+            var runValue = $("<li>").text("Name: " + runnerArray[i].FN + " " + runnerArray[i].LN + " Time: " + runnerArray[i].min + ":" + runnerArray[i].sec + " " + runnerArray[i].gender);
+            runValue.attr("class",runnerArray[i].name);            
+            runValue.click(function () {
+                for (var j = 0; j < runnerArray.length; j++) {
+                    if (runnerArray[j].name == this.className) {
+                        runnerArray.splice(j, 1);
+                        localStorage.setItem("runnerArray", JSON.stringify(runnerArray));
+                    }
+                }
+                $("." + this.className).remove();
+            });
+            if (runnerArray[i].gender == "m") {
+                $("#finishers_m").append(runValue);
+            } else if (runnerArray[i].gender == "f") {
+                $("#finishers_f").append(runValue);
             }
-            if (json.status == "success"){
-                alert(json.message);
-                clearInput();
-            }
-        },"json")
-    });
-    
-    
-    function clearInput(){
-        $("#addRunner :input").each(function(){
+            $("#finishers_all").append(runValue.clone(true));
+        }
+    }
+
+    function getrunnerArray() {
+        var runnerArray = localStorage["runnerArray"];
+        if (!runnerArray) {
+            runnerArray = [];
+            localStorage.setItem("runnerArray", JSON.stringify(runnerArray));
+        } else {
+            runnerArray = JSON.parse(runnerArray);
+        }
+        return runnerArray;
+    }
+
+    function clearInput() {
+        $("#addRunner :input").each(function () {
             $(this).val("");
         });
     }
@@ -46,17 +96,12 @@ $(document).ready(function () {
         $("#freq")[0].innerHTML = "refreshes time: " + FREQ / 1000;
     }
 
-    function showTime() {
-        //        alert(123);
-        $("#updatedTime").load("time.php");
-    }
-
     function getxxxxx() {
         $.ajax({
-            url: "finishers.xml",
-            cache: false,
-            dataType: "xml",
-            success: function (xml) {
+            url: "finishers.xml"
+            , cache: false
+            , dataType: "xml"
+            , success: function (xml) {
                 $("#finishers_m").empty();
                 $("#finishers_f").empty();
                 $("#finishers_all").empty();
@@ -70,8 +115,9 @@ $(document).ready(function () {
                     }
                     $("#finishers_all").append(info);
                 });
-//                getTime();
-                showTime();
+                getTime();
+                showrunnerArray();
+                //                showTime();
             }
         });
     }
@@ -110,5 +156,10 @@ $(document).ready(function () {
         }
 
         $('#updatedTime').html(curr_hour + ":" + curr_min + ":" + curr_sec + " " + a_p);
+    }
+
+    function showTime() {
+        //   PHP方式获取时间
+        $("#updatedTime").load("time.php");
     }
 });

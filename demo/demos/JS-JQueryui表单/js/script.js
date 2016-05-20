@@ -4,12 +4,12 @@ $(document).ready(function () {
         changeYear: true
     }); //日期选择器
 
-    $("#type").buttonset(); //单选
+    $("#type_select").buttonset(); //单选
 
     slidefn("#distance", "#slide_dist", 0, 0, 500, 10);
     slidefn("#weight", "#slide_weight", 0, 0, 5000, 5);
     slidefn("#height", "#slide_height", 0, 0, 20, 1);
-    slidefn("#lat,#long", "#slide_lat,#slide_long", 0, -90, 90, 0.00001);
+    slidefn("#latitude,#longitude", "#slide_lat,#slide_long", 0, -90, 90, 0.00001);
     slidefn("#red_val,#blue_val,#green_val", "#red,#blue,#green", 127, 0, 255, 1);
     $("#red, #green, #blue").slider({
         range: "min",
