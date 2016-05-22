@@ -21,7 +21,7 @@ window.onload = function () {
         if (lmsStr.indexOf(lmsArrayTure) != -1) {
             lmsArray = [];
             $("#wrap").animate({
-                opacity: 0.7
+                opacity: 0.8
             }, 1000);
             $("#heart").animate({
                 opacity: 1
