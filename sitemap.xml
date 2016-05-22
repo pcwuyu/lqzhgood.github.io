@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/about/js/main.js</loc>
+    <loc>http://yoursite.com/about/index.html</loc>
     
-    <lastmod>2016-05-22T15:08:44.441Z</lastmod>
+    <lastmod>2016-05-22T17:04:18.153Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/about/index.html</loc>
+    <loc>http://yoursite.com/about/js/main.js</loc>
     
-    <lastmod>2016-05-22T14:38:16.052Z</lastmod>
+    <lastmod>2016-05-22T15:08:44.441Z</lastmod>
     
   </url>
   
