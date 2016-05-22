@@ -2,30 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2016/05/20/Say-Hi/</loc>
+    <loc>http://yoursite.com/about/js/main.js</loc>
     
-    <lastmod>2016-05-20T16:40:17.624Z</lastmod>
+    <lastmod>2016-05-22T14:38:46.647Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/about/index.html</loc>
     
-    <lastmod>2016-05-11T12:30:00.241Z</lastmod>
+    <lastmod>2016-05-22T14:38:16.052Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/05/20/Say-Hi/</loc>
+    
+    <lastmod>2016-05-21T14:13:50.774Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/guestbook/index.html</loc>
     
-    <lastmod>2016-05-11T12:25:00.182Z</lastmod>
+    <lastmod>2016-05-21T13:54:56.704Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2016/05/01/hello-world/</loc>
     
-    <lastmod>2016-05-09T14:47:59.725Z</lastmod>
+    <lastmod>2016-05-20T16:42:08.273Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/about/js/jquery-2.2.3.min.js</loc>
+    
+    <lastmod>2016-05-14T03:40:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/about/js/jquery-1.6.2.min.js</loc>
+    
+    <lastmod>2016-05-03T10:25:45.000Z</lastmod>
     
   </url>
   
