@@ -20,9 +20,11 @@ window.onload = function () {
         var lmsStr = lmsArray.join("&");
         if (lmsStr.indexOf(lmsArrayTure) != -1) {
             lmsArray = [];
+            $("#wrap").css("display","block");
             $("#wrap").animate({
                 opacity: 0.8
             }, 1000);
+            $("#heart").css("display","block");
             $("#heart").animate({
                 opacity: 1
             }, 1000);
