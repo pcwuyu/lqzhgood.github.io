@@ -11,10 +11,8 @@ window.onload = function () {
 
         var key = e.which;
         if (key == 27 && $("#heart").css("opacity") == 1) {
-            $(".colorEgg").animate({
-                opacity: 0
-            }, 1000);
-            $(".colorEgg").css("display","none");
+            $(".colorEgg").animate({opacity:0},1000);
+            $(".colorEgg").hide(1000);
         }
         lmsArray.unshift(key);
 
