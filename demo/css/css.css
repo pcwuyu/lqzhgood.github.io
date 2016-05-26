@@ -53,7 +53,7 @@
                 position: absolute;
                 background-color: rgb(63, 63, 63);
                 box-shadow: #282828 1px 1px 1px;
-                width: 140px;
+                height: 16px;
                 padding: 3px;
                 right: 0;
                 z-index: 99;
