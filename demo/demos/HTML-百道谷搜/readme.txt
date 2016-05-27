@@ -1,4 +1,4 @@
-Frame实现的同屏三搜-暂无法解决Google的Frame实现-
+Frame实现的同屏三搜-暂无法解决Google的Frame实现 自动隐藏-
 
 
 百度-有道--谷歌（中国）搜索，利用XML判断google是否可以访问，超时1s关闭谷歌子窗口

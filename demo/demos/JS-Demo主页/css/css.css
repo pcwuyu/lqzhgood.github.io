@@ -32,7 +32,9 @@
                 position: relative;
             }
             
-            .idTabs {}
+            .idTabs li {
+                cursor: pointer
+            }
             
             .idTabs span {
                 position: absolute;
@@ -46,7 +48,7 @@
             }
             
             .idTabs span:hover {
-                transform: rotate(1080deg);
+                transform: rotate(1440deg);
             }
             
             #shuoming {
@@ -91,7 +93,7 @@
             }
             
             .idTabs li:nth-child(3) {
-                border-bottom: 30px solid RGB(133,211,250);
+                border-bottom: 30px solid RGB(133, 211, 250);
                 z-index: 2;
             }
             

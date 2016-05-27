@@ -1,6 +1,7 @@
 var txtObj;
+var urlDemo = "demos/";
 $(function () {
-    var lcolor = ["#ffc0cb","#9cddd2","#acd7ed","#acd7ed"];
+    var lcolor = ["#ffc0cb","#9cddd2","#acd7ed","#56f9e8"];
     
 //    右上×号函数
     $(".idTabs span").mouseover(function(){
@@ -16,7 +17,7 @@ $(function () {
         var _that = $(this);
         this.an = 0;
         this.lcolor=lcolor[index];
-        console.log(this.lcolor);
+
         $(this).click(function () {
             if (this.an == "0") { //如果是当前则不切换
                 $(".idTabs>li").each(function (index) {
@@ -52,12 +53,12 @@ $(function () {
             , success: function (xml) {
                 $(xml).find("url").each(function () {
                     var text = $(this).text();
-                    var li = $("<li>").addClass("info").append($("<div>").addClass("infoLeft").append("<a target='_blank' href='demos/" + $(this).text() + "'>" + $(this).text() + "</a>"));
+                    var li = $("<li>").addClass("info").append($("<div>").addClass("infoLeft").append("<a target='_blank' href='"+urlDemo + $(this).text() + "'>" + $(this).text() + "</a>"));
 
                     var readme = function (text) {
                         txtObj = "";
                         $.ajax({
-                            url: "demos/" + text + "/readme.txt"
+                            url: urlDemo + text + "/readme.txt"
                             , cache: false
                             , dataType: "text"
                             , async: false
@@ -76,7 +77,7 @@ $(function () {
                     var pinfo = $("<p>").addClass("demoInfo");
                     var pguest = $("<p>").addClass("demoGuest");
                     if (txtObj != "") {
-                        var aguest = $("<a>").text(txtObj.guest).attr("target", "_blank").attr("href", 'demos/' + $(this).text() + '/readme.txt');
+                        var aguest = $("<a>").text(txtObj.guest).attr("target", "_blank").attr("href", urlDemo + $(this).text() + '/readme.txt');
                         pinfo.text(txtObj.info);
                         pguest.append(aguest);
                     }
