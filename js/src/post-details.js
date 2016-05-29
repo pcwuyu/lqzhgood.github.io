@@ -132,8 +132,22 @@ $(document).ready(function () {
     var $tocContent = $('.post-toc-content');
 
     if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        console.log("123");
       if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-        NexT.utils.displaySidebar();
+          
+        $(document).scroll(function () {           
+            var top = $(document).scrollTop();
+             console.log(top);
+            if (top > 300 && $("#sidebar").css("display") == "none") {
+                $('.sidebar-toggle').stop();
+                NexT.utils.displaySidebar();
+            } 
+            else if (top <= 300 && $("#sidebar").css("display") == "block") {
+                $('.sidebar-toggle').stop();
+                NexT.utils.displaySidebar();
+            }
+        });
+          
       }
     }
   };

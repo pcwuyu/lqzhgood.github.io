@@ -53,7 +53,7 @@ $(function () {
             , success: function (xml) {
                 $(xml).find("url").each(function () {
                     var text = $(this).text();
-                    var li = $("<li>").addClass("info").append($("<div>").addClass("infoLeft").append("<a target='_blank' href='"+urlDemo + $(this).text() + "'>" + $(this).text() + "</a>"));
+                    var li = $("<li>").addClass("info").append($("<div>").addClass("infoLeft").append("<a target='_blank' href='"+urlDemo + $(this).text() + "/'>" + $(this).text() + "</a>"));
 
                     var readme = function (text) {
                         txtObj = "";
