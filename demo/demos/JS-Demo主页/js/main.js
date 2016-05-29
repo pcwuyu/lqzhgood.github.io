@@ -1,3 +1,10 @@
+window.onload=function(){
+    $("#loading").animate({opacity:0},1000,function(){
+         $("#loading").css("display","none");
+    });
+}
+
+
 var txtObj;
 var urlDemo = "demos/";
 $(function () {
