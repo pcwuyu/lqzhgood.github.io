@@ -133,25 +133,38 @@ $(document).ready(function () {
 
     if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
       if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-//        NexT.utils.displaySidebar();
-        
-         
-       $(document).scroll(function () { 
-           var timeA = new Date().gettime(); 
-            console.log(timeA);
-            if( timeA > timeA + 1000) {
-                var top = $(document).scrollTop();             
-                if (top > 400 && $("#sidebar").css("display") == "none") {
-                     NexT.utils.displaySidebar();
-                } 
-                else if (top <= 400 && $("#sidebar").css("display") == "block") {
-                     NexT.utils.displaySidebar();
-                }
-           }
-        
-        });
-          
+        NexT.utils.displaySidebar();        
       }
     }
   };
+    
+   
+    // 下滑动右侧显示，上滑动右侧隐藏
+    $("#sidebar").css("display","none");
+    var a = "1";
+    $(document).scroll(function () {
+     //if (($(document).scrollTop() > 300) && ($("#sidebar").css("display") == "none")) {
+     if (($(document).scrollTop() > 200) && ($("#sidebar").css("display") == "none") && $(".back-to-top-on").length > 0) {
+         if (a == "1") {
+             NexT.utils.displaySidebar();
+             a = "0";
+         }
+
+         //大于 显示
+     }
+     //else if (($(document).scrollTop() <= 10) && ($("#sidebar").css("display") == "block")) {
+     else if (($(document).scrollTop() <= 200) && ($("#sidebar").css("display") == "block") && $(".back-to-top-on").length == 0) {
+         {
+             if (a == "0") {
+                 NexT.utils.displaySidebar();
+                 a = "1";
+             }
+             //小于 隐藏
+         }
+     }
+ });//自建结束
+    
+    
+          
+    
 });

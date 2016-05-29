@@ -1,0 +1,690 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.useso.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.gif?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="原版中，侧边栏只会在进入文章时显示，但如果文章看完后返回顶部并不会隐藏。虽然从实际角度出发并无大碍，多数看完文章直接就X了，更何况我都禁了抓取，这里只有自己。可就是看着不顺眼，然后……一晚上没了 T.T
+去官网文档并没有找到关于文件结构的相关说明，便从网页开始逆向，从 ClassName 、ID  等关键词搜寻本地文件内容。傻逼样的 Windows 是根据后缀来判断是否搜索文件内容， 虽然是用纯文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为侧边栏增加自动隐藏">
+<meta property="og:url" content="http://yoursite.com/2016/05/29/为侧边栏增加自动隐藏/index.html">
+<meta property="og:site_name" content="取个名字好难啊">
+<meta property="og:description" content="原版中，侧边栏只会在进入文章时显示，但如果文章看完后返回顶部并不会隐藏。虽然从实际角度出发并无大碍，多数看完文章直接就X了，更何况我都禁了抓取，这里只有自己。可就是看着不顺眼，然后……一晚上没了 T.T
+去官网文档并没有找到关于文件结构的相关说明，便从网页开始逆向，从 ClassName 、ID  等关键词搜寻本地文件内容。傻逼样的 Windows 是根据后缀来判断是否搜索文件内容， 虽然是用纯文">
+<meta property="og:updated_time" content="2016-05-29T16:17:44.569Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="为侧边栏增加自动隐藏">
+<meta name="twitter:description" content="原版中，侧边栏只会在进入文章时显示，但如果文章看完后返回顶部并不会隐藏。虽然从实际角度出发并无大碍，多数看完文章直接就X了，更何况我都禁了抓取，这里只有自己。可就是看着不顺眼，然后……一晚上没了 T.T
+去官网文档并没有找到关于文件结构的相关说明，便从网页开始逆向，从 ClassName 、ID  等关键词搜寻本地文件内容。傻逼样的 Windows 是根据后缀来判断是否搜索文件内容， 虽然是用纯文">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 为侧边栏增加自动隐藏 | 取个名字好难啊 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-77374526-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?b106d71b3fd9ebb859c788403497c8d1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=56399385";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">取个名字好难啊</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">我也觉得</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'zvy_Ns547mCvoAxC4Dg8','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                为侧边栏增加自动隐藏
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-29T23:26:59+08:00" content="2016-05-29">
+              2016-05-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/29/为侧边栏增加自动隐藏/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/29/为侧边栏增加自动隐藏/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>原版中，侧边栏只会在进入文章时显示，但如果文章看完后返回顶部并不会隐藏。虽然从实际角度出发并无大碍，多数看完文章直接就X了，更何况我都禁了抓取，这里只有自己。可就是看着不顺眼，然后……一晚上没了 T.T</p>
+<p>去官网文档并没有找到关于文件结构的相关说明，便从网页开始逆向，从 <em>ClassName 、ID</em>  等关键词搜寻本地文件内容。傻逼样的 Windows 是根据后缀来判断是否搜索文件内容， 虽然是用纯文本写的 <em>.swig</em> 直接被无视了。想用批处理来批量转换.TXT再用Windows搜素，此处浪费一小时～搜了个能搜索自定义文件名纯文本内容的软件几分钟解决…… 真爱生命，少造轮子 〒▽〒</p>
+<p>后面还有一堆坑，不想说了……</p>
+<p>CSS JS 等源文件目录</p>
+<blockquote>
+<p>Hexo\themes\next\source</p>
+</blockquote>
+<h5 id="HTML-结构部分"><a href="#HTML-结构部分" class="headerlink" title="HTML 结构部分"></a>HTML 结构部分</h5><p>主题的_config.yml参数和以下文件共同控制。<br>&gt; Hexo\themes\next\layout_macro\sidebar.swig</p>
+<blockquote>
+<p>  sidebar:    display: hide  </p>
+</blockquote>
+<h5 id="函数部分"><a href="#函数部分" class="headerlink" title="函数部分"></a>函数部分</h5><p>这部分关联文件很多，主要是通过<br>&gt; Hexo\themes\next\source\js\src\post-details.js<br>这个文件中最后一段<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (CONFIG.sidebar.display === <span class="string">'post'</span> || CONFIG.sidebar.display === <span class="string">'always'</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> ($tocContent.length &gt; <span class="number">0</span> &amp;&amp; $tocContent.html().trim().length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      NexT.utils.displaySidebar();        </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果主题文件中<em>sidebar</em>为 post 或者 always 则会在页面载入后触发一次<em> NexT.utils.displaySidebar()</em> ，这个函数在<br>&gt; Hexo\themes\next\source\js\src\utils.js<br>中有体现。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">NexT.utils = NexT.$u = &#123;</span><br><span class="line">*****</span><br><span class="line"> displaySidebar: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.isDesktop() || <span class="keyword">this</span>.isPisces()) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    $(<span class="string">'.sidebar-toggle'</span>).trigger(<span class="string">'click'</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">*****</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>根据作者其他函数的书写习惯，顺藤摸瓜查找类似以下的函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.sidebar-toggle'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>但这个函数细节始终没有找到。埋下最大一个坑。<br>开始觉得只要主题中设置为 <em>.hide</em> 后，在 <em>post-details.js</em> 最后添加以下函数即可<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).scroll(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">if</span> ($(<span class="built_in">document</span>).scrollTop() &gt; <span class="number">200</span> &amp;&amp; $(<span class="string">"#sidebar"</span>).css(<span class="string">"display"</span>) == <span class="string">"none"</span>) &#123;</span><br><span class="line">             NexT.utils.displaySidebar();</span><br><span class="line">         &#125;</span><br><span class="line">     <span class="keyword">else</span> <span class="keyword">if</span> ($(<span class="built_in">document</span>).scrollTop() &lt;= <span class="number">200</span> &amp;&amp; $(<span class="string">"#sidebar"</span>).css(<span class="string">"display"</span>) == <span class="string">"block"</span>) &#123;</span><br><span class="line">             NexT.utils.displaySidebar();</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;);<span class="comment">//结束</span></span><br></pre></td></tr></table></figure></p>
+<p>在最顶部测试</p>
+<blockquote>
+<p>(document).scrollTop()  &lt;= 200<br>ture</p>
+<p>$(“#sidebar”).css(“display”) == “none”<br>ture</p>
+<p>($(document).scrollTop() &lt;= 200 &amp;&amp; $(“#sidebar”).css(“display”)<br>false</p>
+</blockquote>
+<p>尼玛坑爹啊！  (╯°Д°)╯︵ ┻━┻<br>还有闪跳等BUG…… 不断缩小 <em>if</em> 范围，最后写成了这样的巨无霸<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下滑动右侧显示，上滑动右侧隐藏</span></span><br><span class="line">   $(<span class="string">"#sidebar"</span>).css(<span class="string">"display"</span>,<span class="string">"none"</span>);</span><br><span class="line">   <span class="keyword">var</span> a = <span class="string">"1"</span>;</span><br><span class="line">   $(<span class="built_in">document</span>).scroll(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//if (($(document).scrollTop() &gt; 300) &amp;&amp; ($("#sidebar").css("display") == "none")) &#123;</span></span><br><span class="line">    <span class="keyword">if</span> (($(<span class="built_in">document</span>).scrollTop() &gt; <span class="number">200</span>) &amp;&amp; ($(<span class="string">"#sidebar"</span>).css(<span class="string">"display"</span>) == <span class="string">"none"</span>) &amp;&amp; $(<span class="string">".back-to-top-on"</span>).length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a == <span class="string">"1"</span>) &#123;</span><br><span class="line">            NexT.utils.displaySidebar();</span><br><span class="line">            a = <span class="string">"0"</span>;</span><br><span class="line">        &#125;<span class="comment">//大于 显示</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//else if (($(document).scrollTop() &lt;= 10) &amp;&amp; ($("#sidebar").css("display") == "block")) &#123;</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (($(<span class="built_in">document</span>).scrollTop() &lt;= <span class="number">200</span>) &amp;&amp; ($(<span class="string">"#sidebar"</span>).css(<span class="string">"display"</span>) == <span class="string">"block"</span>) &amp;&amp; $(<span class="string">".back-to-top-on"</span>).length == <span class="number">0</span>) &#123;</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a == <span class="string">"0"</span>) &#123;</span><br><span class="line">                NexT.utils.displaySidebar();</span><br><span class="line">                a = <span class="string">"1"</span>;</span><br><span class="line">            &#125; <span class="comment">//小于 隐藏</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);<span class="comment">//结束</span></span><br></pre></td></tr></table></figure></p>
+<p>我知道肯定能精简…… 没心思。<br>等会如果上传到主站如果还有BUG….. 我特么不玩了！！！！！</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/25/神奇的CSS/" rel="next" title="神奇的CSS">
+                <i class="fa fa-chevron-left"></i> 神奇的CSS
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/29/为侧边栏增加自动隐藏/"
+           data-title="为侧边栏增加自动隐藏" data-url="http://yoursite.com/2016/05/29/为侧边栏增加自动隐藏/" data-author-key="1">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/img/avatar.gif"
+               alt="lqzh" />
+          <p class="site-author-name" itemprop="name">lqzh</p>
+          <p class="site-description motion-element" itemprop="description">咿呀咿呀哟的博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+<!--               -->
+              <a href="/">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+<!--                -->
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+<!--               -->
+              <a href="/">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+<!--                -->
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lqzhgood" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:liuqinzhi@live.cn" target="_blank" title="Mail">
+                  
+                    <i class="fa fa-envelope"></i>
+                  
+                  Mail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML-结构部分"><span class="nav-number">1.</span> <span class="nav-text">HTML 结构部分</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数部分"><span class="nav-number">2.</span> <span class="nav-text">函数部分</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lqzh</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lqzh"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
