@@ -5,7 +5,13 @@
     width: 100%;
     z-index: 998;
     background-color: #3F3F3F;
+    opacity: 1;
 } 
+
+#wrap {
+    display: none;
+    opacity: 0;
+}
 .spinner {
      z-index: 999;
      position: fixed;
