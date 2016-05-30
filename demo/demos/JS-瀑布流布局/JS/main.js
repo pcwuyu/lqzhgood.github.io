@@ -147,4 +147,3 @@
          }
      })
  } //movePic
- < /script>
