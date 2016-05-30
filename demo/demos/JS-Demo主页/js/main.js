@@ -1,13 +1,13 @@
-//window.onload = function () {
-//    $("#loading").animate({
-//        opacity: 0
-//    }, 500, function () {
-//        $("#loading").css("display", "none");
-//        $("#wrap").css("display", "block").animate({"opacity":"1"},500);
-//    });
-////    $("#loading").fadeOut(1000);
-////    $("#wrap").fadeIn(1000);
-//}
+window.onload = function () {
+    $("#loading").animate({
+        opacity: 0
+    }, 500, function () {
+        $("#loading").css("display", "none");
+        $("#wrap").css("display", "block").animate({"opacity":"1"},500);
+    });
+//    $("#loading").fadeOut(1000);
+//    $("#wrap").fadeIn(1000);
+}
 
 
 var txtObj;
@@ -113,18 +113,4 @@ $(function () {
             }
         });
     }
-
-
-    $("#loading").animate({
-        opacity: 0
-    }, 500, function () {
-        $("#loading").css("display", "none");
-        $("#wrap").css("display", "block").animate({
-            "opacity": "1"
-        }, 500);
-    });
-
-    //    $("#loading").fadeOut(1000);
-    //    $("#wrap").fadeIn(1000);
-
 });
