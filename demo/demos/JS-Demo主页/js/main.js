@@ -1,13 +1,13 @@
-window.onload = function () {
-    $("#loading").animate({
-        opacity: 0
-    }, 500, function () {
-        $("#loading").css("display", "none");
-        $("#wrap").css("display", "block").animate({"opacity":"1"},500);
-    });
-//    $("#loading").fadeOut(1000);
-//    $("#wrap").fadeIn(1000);
-}
+//window.onload = function () {
+//    $("#loading").animate({
+//        opacity: 0
+//    }, 500, function () {
+//        $("#loading").css("display", "none");
+//        $("#wrap").css("display", "block").animate({"opacity":"1"},500);
+//    });
+////    $("#loading").fadeOut(1000);
+////    $("#wrap").fadeIn(1000);
+//}
 
 
 var txtObj;
@@ -64,10 +64,10 @@ $(function () {
 
     function getXML() {
         $.ajax({
-            url: "demos/list.xml"
-            , cache: false
-            , dataType: "xml"
-            , success: function (xml) {
+            url: "demos/list.xml",
+            cache: false,
+            dataType: "xml",
+            success: function (xml) {
                 $(xml).find("url").each(function () {
                     var text = $(this).text();
                     var li = $("<li>").addClass("info").append($("<div>").addClass("infoLeft").append("<a target='_blank' href='" + urlDemo + $(this).text() + "/'>" + $(this).text() + "</a>"));
@@ -75,17 +75,17 @@ $(function () {
                     var readme = function (text) {
                         txtObj = "";
                         $.ajax({
-                            url: urlDemo + text + "/readme.txt"
-                            , cache: false
-                            , dataType: "text"
-                            , async: false
-                            , success: function (txt) {
+                            url: urlDemo + text + "/readme.txt",
+                            cache: false,
+                            dataType: "text",
+                            async: false,
+                            success: function (txt) {
                                 txtObj = {
-                                    info: txt.substring(0, txt.indexOf("-"))
-                                    , guest: txt.substring(txt.indexOf("-") + 1, txt.indexOf("-", txt.indexOf("-") + 1))
+                                    info: txt.substring(0, txt.indexOf("-")),
+                                    guest: txt.substring(txt.indexOf("-") + 1, txt.indexOf("-", txt.indexOf("-") + 1))
                                 };
-                            }
-                            , error: function () {
+                            },
+                            error: function () {
                                 txtObj = "";
                             }
                         });
@@ -114,5 +114,17 @@ $(function () {
         });
     }
 
+
+    $("#loading").animate({
+        opacity: 0
+    }, 500, function () {
+        $("#loading").css("display", "none");
+        $("#wrap").css("display", "block").animate({
+            "opacity": "1"
+        }, 500);
+    });
+
+    //    $("#loading").fadeOut(1000);
+    //    $("#wrap").fadeIn(1000);
 
 });
