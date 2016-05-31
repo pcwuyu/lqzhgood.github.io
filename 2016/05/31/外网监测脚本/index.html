@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="shell," />
 
 
 
@@ -80,42 +80,22 @@
 
 
 
-<meta name="description" content=".tx {
-   color: #D55E4E;
-   background-color: #F9F2F4;
-   font-style: italic;
-}
-
-
-今天做简历的时候用到两列布局，收获两个 CSS 偏方。
-两列等高布局先上代码12345678910111213141516171819202122 .wrap&amp;#123;	margin: 0 auto;	width: 600px;	b">
+<meta name="description" content="最近DNS老是解析错误，感觉 Chinadns 老挂啊。今天刚好休息，写个监控脚本解决下这个问题.
+好久没写 shell 脚本，被 JavaScript 的宽松语法惯坏了。一个 if then 结构都琢磨了一小时，最后发现 if 是接 [ ] 而不是 { } …… 真是郁闷
+12345678910111213141516171819202122232425262728293031323334353">
 <meta property="og:type" content="article">
-<meta property="og:title" content="神奇的CSS">
-<meta property="og:url" content="http://yoursite.com/2016/05/25/神奇的CSS/index.html">
+<meta property="og:title" content="外网监测脚本">
+<meta property="og:url" content="http://yoursite.com/2016/05/31/外网监测脚本/index.html">
 <meta property="og:site_name" content="取个名字好难啊">
-<meta property="og:description" content=".tx {
-   color: #D55E4E;
-   background-color: #F9F2F4;
-   font-style: italic;
-}
-
-
-今天做简历的时候用到两列布局，收获两个 CSS 偏方。
-两列等高布局先上代码12345678910111213141516171819202122 .wrap&amp;#123;	margin: 0 auto;	width: 600px;	b">
-<meta property="og:image" content="http://yoursite.com/./div.jpg">
-<meta property="og:updated_time" content="2016-05-28T13:51:58.292Z">
+<meta property="og:description" content="最近DNS老是解析错误，感觉 Chinadns 老挂啊。今天刚好休息，写个监控脚本解决下这个问题.
+好久没写 shell 脚本，被 JavaScript 的宽松语法惯坏了。一个 if then 结构都琢磨了一小时，最后发现 if 是接 [ ] 而不是 { } …… 真是郁闷
+12345678910111213141516171819202122232425262728293031323334353">
+<meta property="og:updated_time" content="2016-05-31T07:10:41.608Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="神奇的CSS">
-<meta name="twitter:description" content=".tx {
-   color: #D55E4E;
-   background-color: #F9F2F4;
-   font-style: italic;
-}
-
-
-今天做简历的时候用到两列布局，收获两个 CSS 偏方。
-两列等高布局先上代码12345678910111213141516171819202122 .wrap&amp;#123;	margin: 0 auto;	width: 600px;	b">
-<meta name="twitter:image" content="http://yoursite.com/./div.jpg">
+<meta name="twitter:title" content="外网监测脚本">
+<meta name="twitter:description" content="最近DNS老是解析错误，感觉 Chinadns 老挂啊。今天刚好休息，写个监控脚本解决下这个问题.
+好久没写 shell 脚本，被 JavaScript 的宽松语法惯坏了。一个 if then 结构都琢磨了一小时，最后发现 if 是接 [ ] 而不是 { } …… 真是郁闷
+12345678910111213141516171819202122232425262728293031323334353">
 
 
 
@@ -133,7 +113,7 @@
   };
 </script>
 
-  <title> 神奇的CSS | 取个名字好难啊 </title>
+  <title> 外网监测脚本 | 取个名字好难啊 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -321,7 +301,7 @@
             
             
               
-                神奇的CSS
+                外网监测脚本
               
             
           </h1>
@@ -333,8 +313,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-25T23:38:31+08:00" content="2016-05-25">
-              2016-05-25
+            <time itemprop="dateCreated" datetime="2016-05-31T13:39:38+08:00" content="2016-05-31">
+              2016-05-31
             </time>
           </span>
 
@@ -363,8 +343,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/25/神奇的CSS/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/25/神奇的CSS/" itemprop="commentsCount"></span>
+                <a href="/2016/05/31/外网监测脚本/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/31/外网监测脚本/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -387,55 +367,10 @@
       
 
       
-        <style>
-.tx {
-   color: #D55E4E;
-   background-color: #F9F2F4;
-   font-style: italic;
-}
-</style>
-
-<p>今天做简历的时候用到两列布局，收获两个 CSS 偏方。</p>
-<h2 id="两列等高布局"><a href="#两列等高布局" class="headerlink" title="两列等高布局"></a>两列等高布局</h2><p>先上代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="selector-class">.wrap</span>&#123;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">3px</span> solid <span class="number">#00C</span>;</span><br><span class="line">	<span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line">       </span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">           <span class="attribute">float</span>: left;</span><br><span class="line">           <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">           <span class="attribute">background</span>: <span class="number">#B0B0B0</span>;</span><br><span class="line">           <span class="attribute">padding-bottom</span>: <span class="number">2000px</span>;</span><br><span class="line">           <span class="attribute">margin-bottom</span>: -<span class="number">2000px</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">           <span class="attribute">float</span>: left;</span><br><span class="line">           <span class="attribute">width</span>: <span class="number">450px</span>;</span><br><span class="line">           <span class="attribute">background</span>: <span class="number">#6CC</span>;</span><br><span class="line">           <span class="attribute">padding-bottom</span>: <span class="number">2000px</span>;</span><br><span class="line">           <span class="attribute">margin-bottom</span>: -<span class="number">2000px</span>;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></p>
-<p>重点是 .left 和 .right 的 pading 和 <strong>-</strong>margin 的 bottom 足够大，看似是抵消，实则是用来撑大 wrap 的边界。然后奇迹发生了</p>
-<p><img src="./div.jpg" alt="Alt text"></p>
-<p>left 的边界并没有变大，但是颜色溢出到了 wrap 中，但是因为 <span class="tx"><em>overflow: hidden</em></span> 而被截断在 wrap 边界。只能认为是 CSS 认为 padding 无穷大，故背景色一直延伸，但是边框却因为 margin 和 padding 的抵消而未变化。这着实矛盾，百思不得其解。只能暂且认为 CSS 在判定边框的时候会综合考虑 padding 和 margin ，但是背景色仅会考虑 padding 所致，不过背景色本来就只考虑 padding 上着色，但严谨的来说，背景色不应该是用边框内来判定么，这是BUG？</p>
-<h2 id="伪类-伪元素实现强调特效"><a href="#伪类-伪元素实现强调特效" class="headerlink" title="伪类/伪元素实现强调特效"></a>伪类/伪元素实现强调特效</h2><p>CSS 两个伪类 :before 和 :after 一直认为仅用来添加文本，用于提示。今天看到还有用来做特效的，颇有颜文字的精髓，大开眼界。</p>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>先说说伪类/伪元素的区别，网上已经有前辈精确的描述</p>
-<blockquote>
-<p>伪类的效果可以通过添加一个实际的类来达到<br>伪元素的效果则需要通过添加一个实际的元素才能达到</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">p</span>&gt;</span> </span><br><span class="line">	 <span class="tag">&lt;<span class="name">i</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">i</span>&gt;</span> </span><br><span class="line">	 <span class="tag">&lt;<span class="name">i</span>&gt;</span>World!<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>例如 ，如果要将Hello着色，用伪类描述为 <span class="tx">p i:first-child { color: red; }</span>，如果仅用CSS实现需要为第一个 i 元素添加类  <span class="tx">.className</span> { color:red; }。<br>也就是如果要实现伪类的效果，是可以添加一个 class 实现的。<br>而伪元素则是必须要添加一个元素实现，例如 H 着色。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>H<span class="tag">&lt;/<span class="name">span</span>&gt;</span>ello<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h3><pre><code class="css"><span class="selector-tag">a</span> {
-    <span class="attribute">position</span>: relative;
-    <span class="attribute">display</span>: inline-block;
-    <span class="attribute">outline</span>: none;
-    <span class="attribute">text-decoration</span>: none;
-    <span class="attribute">color</span>: <span class="number">#000</span>;
-    <span class="attribute">font-size</span>: <span class="number">32px</span>;
-    <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">10px</span>;
-}
-
-<span class="selector-tag">a</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">::before</span>,
-<span class="selector-tag">a</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">::after</span> {
-    <span class="attribute">position</span>: absolute;
-}
-
-<span class="selector-tag">a</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">::before</span> {
-    <span class="attribute">content</span>: <span class="string">"\5B"</span>;
-    <span class="attribute">left</span>: -<span class="number">20px</span>;
-}
-
-<span class="selector-tag">a</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">::after</span> {
-    <span class="attribute">content</span>: <span class="string">"\5D"</span>;
-    <span class="attribute">right</span>: -<span class="number">20px</span>;
-}
-</code></pre>
-<p>其中<span class="tx"> content </span>不能为空，原理就是用<span class="tx"> :after和 :before </span>在前后增加 ”div“ ,实现<span class="tx"> :hover </span> 显示/隐藏的效果。</p>
-<h3 id="特技"><a href="#特技" class="headerlink" title="特技"></a>特技</h3><p>还有一个重点是通过伪类增加的文本不可复制，因为不在DOM中。</p>
-<p>想出这些用法的人真是……完全不按套路出牌！ (╯°Д°)╯︵ ┻━┻</p>
+        <p>最近DNS老是解析错误，感觉 Chinadns 老挂啊。今天刚好休息，写个监控脚本解决下这个问题.</p>
+<p>好久没写 shell 脚本，被 JavaScript 的宽松语法惯坏了。一个 if then 结构都琢磨了一小时，最后发现 if 是接 [ ] 而不是 { } …… 真是郁闷</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#开机多拨延迟100s</span></span><br><span class="line">sleep <span class="number">100</span></span><br><span class="line">DATE=`date +%Y-%m-%d-%H:%M:%S`</span><br><span class="line">tries=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">SS=<span class="number">0</span></span><br><span class="line">DNS=<span class="number">0</span></span><br><span class="line"><span class="comment">#固定IP地址 要确定域名对应的IP不会变 这里我写的自己VPS域名对应的IP</span></span><br><span class="line">ip2=<span class="string">"X.X.X.X"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo --- my_watchdog start ---</span><br><span class="line"><span class="keyword">while</span> [[ <span class="variable">$tries</span> <span class="nomarkup">-lt</span> <span class="number">5</span> ]]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="comment">#ss</span></span><br><span class="line">	wget -<span class="number">4</span> --spider --quiet --tries=<span class="number">1</span> --timeout=<span class="number">3</span> www.google.co.jp</span><br><span class="line">	<span class="keyword">if</span> [ <span class="string">"$?"</span> == <span class="string">"0"</span> ]; then</span><br><span class="line">		SS=<span class="number">0</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		wget -<span class="number">4</span> --spider --quiet --tries=<span class="number">1</span> --timeout=<span class="number">3</span> www.baidu.com</span><br><span class="line">		<span class="keyword">if</span> [ <span class="string">"$?"</span> == <span class="string">"0"</span> ]; then</span><br><span class="line">			echo <span class="variable">$DATE</span> Problem shadowsocks. SS <span class="variable">$tries</span> &gt;&gt; /root/log/ss1.log</span><br><span class="line">			SS=$((SS+<span class="number">1</span>))</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			echo  <span class="variable">$DATE</span> Network Problem. <span class="keyword">Do</span> nothing. SS <span class="variable">$tries</span> &gt;&gt; /root/log/ss1.log</span><br><span class="line">		fi</span><br><span class="line">	fi</span><br><span class="line"></span><br><span class="line"><span class="comment">#dns</span></span><br><span class="line">	ip=$(nslookup chh-hk.noip.me <span class="number">127.0</span>.<span class="number">0.1</span> | tail -<span class="number">1</span> | awk <span class="string">'&#123;print $3&#125;'</span>)</span><br><span class="line">	<span class="keyword">if</span> [ <span class="variable">$ip</span> == <span class="variable">$ip2</span> ]; then</span><br><span class="line">		DNS=<span class="number">0</span>		</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		DNS=$((DNS+<span class="number">1</span>))</span><br><span class="line">		echo <span class="variable">$DATE</span> Problem DNS. DNS <span class="variable">$tries</span> &gt;&gt; /root/log/ss1.log</span><br><span class="line">	fi</span><br><span class="line"></span><br><span class="line"><span class="comment">#restart</span></span><br><span class="line">	<span class="keyword">if</span> [ <span class="variable">$SS</span> == <span class="string">"0"</span> -o <span class="variable">$DNS</span> == <span class="string">"0"</span> ]; then</span><br><span class="line">                echo --- <span class="keyword">exit</span> ---</span><br><span class="line">                <span class="keyword">exit</span> <span class="number">0</span></span><br><span class="line">	fi</span><br><span class="line">	</span><br><span class="line">   tries=$((tries+<span class="number">1</span>))</span><br><span class="line">   sleep <span class="number">2</span></span><br><span class="line"></span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo <span class="variable">$DATE</span> restart &gt;&gt; /root/log/ss1.log</span><br><span class="line">/etc/init.d/shadowsocks restart</span><br><span class="line">/etc/init.d/dnsmasq restart</span><br><span class="line">/etc/init.d/chinadns restart</span><br></pre></td></tr></table></figure>
+<p>主要判断 SS 和 DNS 是否正常，如果正常则跳出，否则继续判断直到5次，5次不成功重启相关服务。<br>测试几天 以观后效。</p>
 
       
     </div>
@@ -456,7 +391,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag">#css</a>
+            <a href="/tags/shell/" rel="tag">#shell</a>
           
         </div>
       
@@ -465,17 +400,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/24/HoHo无税到手/" rel="next" title="HoHo无税到手">
-                <i class="fa fa-chevron-left"></i> HoHo无税到手
+              <a href="/2016/05/29/为侧边栏增加自动隐藏/" rel="next" title="为侧边栏增加自动隐藏">
+                <i class="fa fa-chevron-left"></i> 为侧边栏增加自动隐藏
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/29/为侧边栏增加自动隐藏/" rel="prev" title="为侧边栏增加自动隐藏">
-                为侧边栏增加自动隐藏 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -501,8 +432,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/25/神奇的CSS/"
-           data-title="神奇的CSS" data-url="http://yoursite.com/2016/05/25/神奇的CSS/" data-author-key="1">
+      <div class="ds-thread" data-thread-key="2016/05/31/外网监测脚本/"
+           data-title="外网监测脚本" data-url="http://yoursite.com/2016/05/31/外网监测脚本/" data-author-key="1">
       </div>
     
   </div>
@@ -617,7 +548,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#两列等高布局"><span class="nav-number">1.</span> <span class="nav-text">两列等高布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪类-伪元素实现强调特效"><span class="nav-number">2.</span> <span class="nav-text">伪类/伪元素实现强调特效</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#区别"><span class="nav-number">2.1.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特效"><span class="nav-number">2.2.</span> <span class="nav-text">特效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特技"><span class="nav-number">2.3.</span> <span class="nav-text">特技</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
