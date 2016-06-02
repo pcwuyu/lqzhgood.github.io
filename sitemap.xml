@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/ReadMe.html</loc>
+    
+    <lastmod>2016-06-02T14:35:06.327Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/06/02/Re-App-Swap/</loc>
     
     <lastmod>2016-06-02T13:10:23.786Z</lastmod>
