@@ -75,7 +75,7 @@ $(function () {
                     var readme = function (text) {
                         txtObj = "";
                         $.ajax({
-                            url: urlDemo + text + "/readme.txt",
+                            url: urlDemo + text + "/readme.md",
                             cache: false,
                             dataType: "text",
                             async: false,
@@ -94,7 +94,7 @@ $(function () {
                     var pinfo = $("<p>").addClass("demoInfo");
                     var pguest = $("<p>").addClass("demoGuest");
                     if (txtObj != "") {
-                        var aguest = $("<a>").text(txtObj.guest).attr("target", "_blank").attr("href", urlDemo + $(this).text() + '/readme.txt');
+                        var aguest = $("<a>").text(txtObj.guest).attr("target", "_blank").attr("href", urlDemo + $(this).text() + '/readme.md');
                         pinfo.text(txtObj.info);
                         pguest.append(aguest);
                     }

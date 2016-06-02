@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="GB18030"?>
 <urls>
+<url>CSS-搜索栏</url>
 <url>CSS-留言板</url>
 <url>CSS-简历</url>
 <url>HTML-百道谷搜</url>
@@ -7,6 +8,7 @@
 <url>JS-Demo主页</url>
 <url>JS-DOM管理</url>
 <url>JS-JQueryui表单</url>
+<url>JS-T9输入法</url>
 <url>JS-列表滑动</url>
 <url>JS-动画</url>
 <url>JS-抽奖四选一</url>
