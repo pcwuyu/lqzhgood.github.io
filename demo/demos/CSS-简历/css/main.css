@@ -30,16 +30,16 @@
            background-color: #5DC3B0;
            text-align: center;
            padding: 49px;
-           padding-bottom: 50em;
-           margin-bottom: -50em;
+           padding-bottom: 500em;
+           margin-bottom: -500em;
        }
        
        #right {
            width: 550px;
            float: left;
            padding: 50px 50px 50px 30px;
-           padding-bottom: 50em;
-           margin-bottom: -50em;
+           padding-bottom: 500em;
+           margin-bottom: -500em;
        }
        
        #info p {
@@ -124,6 +124,16 @@
            font-size: 4px;
        }
        
+       #readme #know {
+           text-align: center;
+       }
+       
+       #readme #know span {
+           font-size: 4px;
+           display: inline-block;
+           width: 20%;
+       }
+       
        #mail {
            color: #f1eee8;
            text-align: left;
@@ -173,6 +183,10 @@
        
        #ahome:hover::after {
            content: "　可能要翻墙";
+           font-size: 10px;
+           /*           color: #6B6B6B;*/
+           font-weight: bold;
+           text-decoration: none;
        }
        
        #right p {
@@ -185,11 +199,33 @@
            color: rgb(29, 125, 113);
            width: 200px;
            margin-left: 230px;
+           text-decoration: none;
        }
        
-       #right #demo h3 a {
+       #right #demos h3 a {
            color: #5DC3B0;
            text-decoration: none;
+       }
+       
+       #right .demo {
+           position: relative;
+       }
+       
+       #right .keyWord {
+           height: 27px;
+           position: absolute;
+           right: 0;
+           top: 0;
+           background: url("data:image/jpg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABkAAD/4QMvaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjUtYzAyMSA3OS4xNTU3NzIsIDIwMTQvMDEvMTMtMTk6NDQ6MDAgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE0IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGMThCNjY4RTJCQTQxMUU2QjhCMzlGNjk2QjJBODNBQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGMThCNjY4RjJCQTQxMUU2QjhCMzlGNjk2QjJBODNBQSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkYxOEI2NjhDMkJBNDExRTZCOEIzOUY2OTZCMkE4M0FBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkYxOEI2NjhEMkJBNDExRTZCOEIzOUY2OTZCMkE4M0FBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQICAgICAgICAgICAwMDAwMDAwMDAwEBAQEBAQECAQECAgIBAgIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD/8AAEQgABQABAwERAAIRAQMRAf/EAEsAAQAAAAAAAAAAAAAAAAAAAAkBAQEAAAAAAAAAAAAAAAAAAAcJEAEAAAAAAAAAAAAAAAAAAAAAEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA9ikkO/9k=") repeat-x 0 10.5px;
+}
+       
+       #right .keyWord span {
+           display: inline-block;
+           background-color: #5DC3B0;
+           font-size: 10px;
+           padding: 5px;
+           color: #f1eee8;
+           font-weight: bold;
        }
        
        #right #study {
@@ -223,9 +259,10 @@
            margin: 0px;
            line-height: 24px;
        }
-        #right #myself a {
-            font-style: italic;
-            color: #000;
-            text-decoration: none;
-            border-bottom:1px dashed #000;
-        }
+       
+       #right #myself a {
+           font-style: italic;
+           color: #000;
+           text-decoration: none;
+           border-bottom: 1px dashed #000;
+       }
