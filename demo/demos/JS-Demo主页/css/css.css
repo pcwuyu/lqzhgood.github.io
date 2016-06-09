@@ -55,13 +55,13 @@ h4 {
     position: absolute;
     background-color: rgb(63, 63, 63);
     box-shadow: #282828 1px 1px 1px;
-    height: 16px;
     padding: 3px;
     right: 0;
     z-index: 99;
     font-size: 8px;
     color: white;
-    display: none
+    display: none;
+    text-align: right;
 }
 
 .idTabs li {
@@ -70,7 +70,7 @@ h4 {
     height: 0px;
     line-height: 30px;
     text-align: center;
-    font-family: AvenirNextCondensed-DemiBold, "Lucida Grande", Corbel, "Trebuchet Ms", sans-serif;
+    font-family: "AvenirNextCondensed-DemiBold", "Lucida Grande", "Corbel", "Trebuchet Ms", sans-serif;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     margin: 0 -10px;
@@ -143,9 +143,8 @@ h4 {
     width: 450px;
     margin: 10px auto;
     list-style: none;
-    box-shadow: #282828 1px 1px 1px;
-    -webkit-box-shadow: #282828 1px 1px 1px;
-    -moz-box-shadow: #282828 1px 1px 1px;
+    box-shadow: #292929 0px 0px 3px;
+    position: relative;
 }
 
 .info div {
@@ -154,6 +153,10 @@ h4 {
     height: 50px;
 }
 
+
+.info .infoLeft:hover a {
+    text-shadow: 0 0 6px #282828;
+}
 .info .infoLeft {
     font-weight: bold;
     font-size: 1.1em;
@@ -161,11 +164,14 @@ h4 {
     text-align: center;
     background-color: #3EB69F;
     vertical-align: middle;
+    border-right: 1px solid rgb(70, 185, 163);
 }
 
 .info .infoRight {
     width: 300px;
     background-color: #5DC3B0;
+    padding-left: 10px;
+    border-left: 1px solid rgb(78, 189, 168);
 }
 
 .info .infoRight .demoInfo {
@@ -179,4 +185,54 @@ h4 {
     font-family: "Titillium", "Microsoft YaHei", " 微软雅黑 ", Arial, sans-serif;
     font-style: italic;
     color: #D4D4D4;
+}
+.info .infoRight .demoGuest:hover a {
+    font-style: normal;
+    text-shadow: 0 0 6px #272727;
+} 
+
+.info .corner {
+    width: 0;
+    height: 0;
+    padding: 0;
+}
+
+.info .corner p {
+    background: #e3e3e3;
+    background: -moz-linear-gradient(top, #e3e3e3, #c8c8c8);
+    background: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(#c8c8c8));
+    padding: 3px 6px;
+    margin-right: -20px;
+    margin-top: 0;
+    position: absolute;
+    right: -1px;
+    top: 5px;
+    width: 35px;
+    -moz-box-shadow: 1px 1px 3px #292929;
+    -webkit-box-shadow: 1px 1px 3px #292929;
+    box-shadow: 1px 1px 3px #292929;
+    text-align: center;
+    font-size: 10px;
+}
+
+.info .corner .arrow {
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border-right: 20px solid transparent;
+    border-top: 10px solid #c8c8c8;
+    top: 104%;
+    right: 0;
+    position: absolute;
+}
+
+.info .corner a {
+    text-decoration: none;
+    font-family: "微软雅黑";
+    color: #454545;
+}
+
+.info .corner a:hover {
+    color: rgb(43, 125, 113);
+    text-decoration: none;
 }

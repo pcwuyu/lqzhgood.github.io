@@ -12,34 +12,35 @@
        div {}
        
        #wrap {
-           width: 990px;
-           margin: 20px auto 20px;
-           background-color: #F1EEE8;
-           height: 100%;
-           overflow: hidden;
-           padding-bottom: 50px;
            position: relative;
-           box-shadow: #282828 0px 0px 40px;
+           overflow: hidden;
+           margin: 20px auto 20px;
+           padding-bottom: 50px;
+           width: 990px;
+           height: 100%;
+           background-color: #F1EEE8;
            -webkit-box-shadow: #282828 0px 0px 40px;
            -moz-box-shadow: #282828 0px 0px 40px;
+           box-shadow: #282828 0px 0px 40px;
        }
        
        #left {
-           width: 260px;
            float: left;
-           background-color: #5DC3B0;
-           text-align: center;
+           margin-bottom: -500em;
            padding: 49px;
            padding-bottom: 500em;
-           margin-bottom: -500em;
+           width: 260px;
+           background-color: #5DC3B0;
+           text-align: center;
        }
        
        #right {
-           width: 550px;
            float: left;
+           margin-bottom: -500em;
            padding: 50px 50px 50px 30px;
            padding-bottom: 500em;
-           margin-bottom: -500em;
+           width: 550px;
+           color: #282828;
        }
        
        #info p {
@@ -48,14 +49,14 @@
        }
        
        #info #job {
-           font-size: 1.2em;
            font-weight: bold;
+           font-size: 1.2em;
        }
        
        #can {
+           margin-left: 15px;
            color: #f1eee8;
            font-weight: bold;
-           margin-left: 15px;
            /*居中*/
        }
        
@@ -76,27 +77,27 @@
        #set50 {
            position: absolute;
            left: 50%;
-           border: 1px dashed white;
-           height: 110px;
-           margin-top: -4px;
-           opacity: 0.5;
            z-index: 3;
+           margin-top: -4px;
+           height: 110px;
+           border: 1px dashed white;
+           opacity: 0.5;
        }
        
        #can .long {
            width: 120px;
            height: 10px;
-           text-align: left;
            border-radius: 15px;
            background-color: #3eb69f;
+           text-align: left;
        }
        
        #can .long span {
-           background-color: #f1eee8;
            display: inline-block;
+           height: 10px;
            border-top-left-radius: 15px;
            border-bottom-left-radius: 15px;
-           height: 10px;
+           background-color: #f1eee8;
        }
        
        #readme:hover #hidd {
@@ -112,9 +113,9 @@
        }
        
        #readme #readmeinfo {
-           text-align: left;
            margin-top: 10px;
            padding-left: 10px;
+           text-align: left;
        }
        
        #readme #ques {
@@ -129,24 +130,24 @@
        }
        
        #readme #know span {
-           font-size: 4px;
            display: inline-block;
            width: 20%;
+           font-size: 4px;
        }
        
        #mail {
+           position: absolute;
+           bottom: 50px;
            color: #f1eee8;
            text-align: left;
            text-decoration: underline;
-           position: absolute;
-           bottom: 50px;
        }
        
        #mail a {
            display: block;
+           padding-left: 40px;
            height: 30px;
            line-height: 30px;
-           padding-left: 40px;
        }
        
        a:visited {
@@ -183,10 +184,10 @@
        
        #ahome:hover::after {
            content: "　可能要翻墙";
-           font-size: 10px;
+           text-decoration: none;
            /*           color: #6B6B6B;*/
            font-weight: bold;
-           text-decoration: none;
+           font-size: 10px;
        }
        
        #right p {
@@ -196,9 +197,9 @@
        
        #right #more {
            display: block;
-           color: rgb(29, 125, 113);
-           width: 200px;
            margin-left: 230px;
+           width: 200px;
+           color: rgb(29, 125, 113);
            text-decoration: none;
        }
        
@@ -212,20 +213,20 @@
        }
        
        #right .keyWord {
-           height: 27px;
            position: absolute;
-           right: 0;
            top: 0;
+           right: 0;
+           height: 27px;
            background: url("data:image/jpg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABkAAD/4QMvaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjUtYzAyMSA3OS4xNTU3NzIsIDIwMTQvMDEvMTMtMTk6NDQ6MDAgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE0IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGMThCNjY4RTJCQTQxMUU2QjhCMzlGNjk2QjJBODNBQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGMThCNjY4RjJCQTQxMUU2QjhCMzlGNjk2QjJBODNBQSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkYxOEI2NjhDMkJBNDExRTZCOEIzOUY2OTZCMkE4M0FBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkYxOEI2NjhEMkJBNDExRTZCOEIzOUY2OTZCMkE4M0FBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQICAgICAgICAgICAwMDAwMDAwMDAwEBAQEBAQECAQECAgIBAgIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD/8AAEQgABQABAwERAAIRAQMRAf/EAEsAAQAAAAAAAAAAAAAAAAAAAAkBAQEAAAAAAAAAAAAAAAAAAAcJEAEAAAAAAAAAAAAAAAAAAAAAEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA9ikkO/9k=") repeat-x 0 10.5px;
-}
+       }
        
        #right .keyWord span {
            display: inline-block;
-           background-color: #5DC3B0;
-           font-size: 10px;
            padding: 5px;
+           background-color: #5DC3B0;
            color: #f1eee8;
            font-weight: bold;
+           font-size: 10px;
        }
        
        #right #study {
@@ -233,15 +234,15 @@
        }
        
        #right h2 {
+           margin: 50px 0 15px 0;
            color: #6B6B6B;
            font-size: 2em;
-           margin: 50px 0 15px 0;
        }
        
        #right h3 {
+           margin: 15px 0 10px 0;
            color: #5DC3B0;
            font-size: 1.3em;
-           margin: 15px 0 10px 0;
        }
        
        #right #study .title {
@@ -255,14 +256,14 @@
        }
        
        #right #myself p {
-           text-indent: 2em;
            margin: 0px;
+           text-indent: 2em;
            line-height: 24px;
        }
        
        #right #myself a {
-           font-style: italic;
-           color: #000;
-           text-decoration: none;
            border-bottom: 1px dashed #000;
+           color: rgb(28, 28, 28);
+           text-decoration: none;
+           font-style: italic;
        }
