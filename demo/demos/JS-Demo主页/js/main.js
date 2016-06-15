@@ -1,12 +1,12 @@
 window.onload = function () {
-    $("#loading").animate({
-        opacity: 0
-    }, 500, function () {
-        $("#loading").css("display", "none");
-        $("#wrap").css("display", "block").animate({
-            "opacity": "1"
-        }, 500);
-    });
+//    $("#loading").animate({
+//        opacity: 0
+//    }, 500, function () {
+//        $("#loading").css("display", "none");
+//        $("#wrap").css("display", "block").animate({
+//            "opacity": "1"
+//        }, 500);
+//    });
     //    $("#loading").fadeOut(1000);
     //    $("#wrap").fadeIn(1000);
 }
@@ -66,6 +66,7 @@ $(function () {
     function getXML() {
         $.ajax({
             url: "demos/list.xml"
+            , async: false
             , cache: false
             , dataType: "xml"
             , success: function (xml) {
@@ -126,4 +127,14 @@ $(function () {
             }
         });
     }
+    $("#loading").animate({
+        opacity: 0
+    }, 500, function () {
+        $("#loading").css("display", "none");
+        $("#wrap").css("display", "block").animate({
+            "opacity": "1"
+        }, 500);
+    });
+    //    $("#loading").fadeOut(1000);
+    //    $("#wrap").fadeIn(1000);
 });
