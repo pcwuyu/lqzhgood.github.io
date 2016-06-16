@@ -67,7 +67,7 @@ $(function () {
         $.ajax({
             url: "demos/list.xml"
             , async: false
-            , cache: false
+            , cache: true
             , dataType: "xml"
             , success: function (xml) {
                 $(xml).find("url").each(function () {
@@ -80,7 +80,7 @@ $(function () {
                         txtObj = "";
                         $.ajax({
                             url: urlDemo + text + "/readme.md"
-                            , cache: false
+                            , cache: true
                             , dataType: "text"
                             , async: false
                             , success: function (txt) {

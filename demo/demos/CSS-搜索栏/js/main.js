@@ -41,7 +41,7 @@ $(function () {
             $("#suggest ul").hide();
         }
 
-    })
+    });
 
 
 
