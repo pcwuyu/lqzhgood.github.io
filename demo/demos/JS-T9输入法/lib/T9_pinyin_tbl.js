@@ -1,4 +1,3 @@
-@charset "utf-8";
 var t9_pinyin_index = [
     {key: "2", index: "a"},
     {key: "3", index: "e"},

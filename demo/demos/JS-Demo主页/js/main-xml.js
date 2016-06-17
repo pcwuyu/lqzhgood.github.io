@@ -66,7 +66,7 @@ $(function () {
     function getXML() {
         $.ajax({
             url: "demos/list.xml"
-            , async: false
+            , async: true
             , cache: true
             , dataType: "xml"
             , success: function (xml) {
@@ -135,6 +135,4 @@ $(function () {
             "opacity": "1"
         }, 500);
     });
-    //    $("#loading").fadeOut(1000);
-    //    $("#wrap").fadeIn(1000);
 });
