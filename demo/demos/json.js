@@ -1,5 +1,5 @@
 var DemoUrl = {
-'CSS-less练习' : ['undefined','undefined'],
+'CSS-less练习' : ['Less练习','以微博为模板的less练习'],
 'CSS-搜索栏' : ['淘宝bing风格搜索框','JSONP实现跨域搜索建议，仅用本地json代替'],
 'CSS-景深特效' : ['CSS景深特效','锤子官网看到的'],
 'CSS-留言板' : ['带本地存储的留言板','先要有清晰的计划再下手'],
