@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            opacity: 1;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div></div>
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        var a = 1;
+        zz();
+
+        function zz() {
+            var a = 2;
+            qq();
+            
+        };
+        function qq (){
+            var a =3 ;
+            alert(this.a);
+        }
+    </script>
+</body>
+
+</html>
