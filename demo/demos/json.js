@@ -1,5 +1,5 @@
 var DemoUrl = {
-'CSS-Canvas时钟' : ['CSS','Canvas时钟'],
+'CSS-Canvas时钟' : ['Canvas动效时钟','萌萌哒的小球到处跑'],
 'CSS-less练习' : ['Less练习','以微博为模板的less练习'],
 'CSS-搜索栏' : ['淘宝bing风格搜索框','JSONP实现跨域搜索建议，仅用本地json代替'],
 'CSS-景深特效' : ['CSS景深特效','锤子官网看到的'],
