@@ -11,15 +11,33 @@ var numArrNew = [];
 var balls = [];
 var color = "rgb(0,102,153)"; //背景球颜色
 var colors = ["#33B5E5", "#0099CC", "#AA66CC", "#9933CC", "#99CC00", "#669900", "#FFBB33", "#FF8800", "#FF4444", "#CC0000"]; //前台球颜色库
+//控制
+var alt = 1;
+var on_off = "on"
+var mode = "clock"; // clock ticking timer
+var timeZt = 0; //暂停记时
+//倒计时 ticking
+//var endTime = new Date(2016, 5, 25, 12, 05, 00).getTime();
+var endTime = new Date().getTime() + 360000000;
+//计时器 timer
+var startTime = new Date().getTime();
+
+
 
 window.onload = function () {
-    document.getElementsByTagName("body")[0].style.height = document.documentElement.clientHeight*0.8 + 'px';
+    //自适应监听
+//    $(window).resize(function(){
+//        if (mode == "clock"){
+//            window.location.reload();
+//        }
+//    });
+    
+    document.getElementsByTagName("body")[0].style.height = document.documentElement.clientHeight * 0.8 + 'px';
     canW = document.body.clientWidth || document.documentElement.clientWidth;
-    canH = document.body.clientHeight || document.documentElement.clientHeight;
-
-    mar_top = Math.round(canH / 5);
+    canH = document.body.clientHeight *0.8 || document.documentElement.clientHeight *0.8;
+    mar_top = Math.round(canH / 4);
     mar_left = Math.round(canW / 9);
-    Radius = Math.round(canW * 4 / 5 / 116) - 1; //58个球
+    Radius = Math.round(canW * 4 / 5 / 116) - 1; //58个球     
 
 
     var canvas = document.getElementById("canvas");
@@ -28,7 +46,6 @@ window.onload = function () {
     var context = canvas.getContext("2d");
     //初始化时间数组
     numArr = getNumArr(numArr);
-    render(context);
 
     setInterval(function () {
         render(context);
@@ -36,11 +53,33 @@ window.onload = function () {
     }, 50);
 }
 
+
+//时间  
+function render(ctx) {
+    //清除画布
+    ctx.clearRect(0, 0, canW, canH);
+    //绘制球
+    var f_w_s = 0;
+    for (var i = 0; i < numArr.length; i++) {
+        draw(mar_left + f_w_s, mar_top, numArr[i], ctx, {
+            "color": color
+        });
+        //计算偏移距离 
+        var f_w = 0;
+        if (numArr[i] != "mh") {
+            f_w = 2 * (Radius + 1) * (7 + 1);
+        } else {
+            f_w = 2 * (Radius + 1) * (4 + 1);
+        }
+        f_w_s += f_w;
+    }
+}
+
 //彩色小球
 function update(ctx) {
     numArrNew = getNumArr(numArrNew);
     //记录不一样的球
-    if (numArrNew[numArrNew.length - 1] != numArr[numArr.length - 1]) { //数组是对象，不能直接比较  比较秒即可      
+    if (on_off == "on" && numArrNew[numArrNew.length - 1] != numArr[numArr.length - 1]) { //数组是对象，不能直接比较  比较秒即可      
         var f_w_s = 0;
         for (var i = 0; i < numArrNew.length; i++) {
             var f_w = 0;
@@ -58,7 +97,9 @@ function update(ctx) {
             f_w_s += f_w;
         }
     }
-    numArr = getNumArr(numArr);
+    if (on_off == "on") {
+        numArr = numArrNew.concat();
+    }
     updateBalls(ctx);
 }
 
@@ -82,31 +123,16 @@ function updateBalls(ctx) {
             balls[cnt++] = balls[i];
         }
     }
-    while (balls.length > Math.min(300,cnt)) {
+    while (balls.length > Math.min(600, cnt)) {
+        //    while (balls.length > cnt) {
         balls.pop();
+    }
+
+    if (balls.length > 600) {
+        console.log("溢出！调高数组宽度 " + balls.length);
     }
 }
 
-//时间  
-function render(ctx) {
-    //清除画布
-    ctx.clearRect(0, 0, canW, canH);
-    //绘制球
-    var f_w_s = 0;
-    for (var i = 0; i < numArr.length; i++) {
-        draw(mar_left + f_w_s, mar_top, numArr[i], ctx, {
-            "color": color
-        });
-        //计算偏移距离 
-        var f_w = 0;
-        if (numArr[i] != "mh") {
-            f_w = 2 * (Radius + 1) * (7 + 1);
-        } else {
-            f_w = 2 * (Radius + 1) * (4 + 1);
-        }
-        f_w_s += f_w;
-    }
-}
 
 //画球 参数 圆心xy 传入字符 画布 颜色
 function draw(x, y, num, ctx, option) {
@@ -122,8 +148,8 @@ function draw(x, y, num, ctx, option) {
                     ctx.fillStyle = colRom;
                 }
                 ctx.fill();
+                //将掉落球的参数写入数组
                 if (option.drop) {
-                    //将掉落球的参数写入数组
                     var oneBall = {
                         "x": x + (j * 2 + 1) * (Radius + 1)
                         , "y": y + (i * 2 + 1) * (Radius + 1)
@@ -133,7 +159,6 @@ function draw(x, y, num, ctx, option) {
                         , "color": colRom
                     }
                     balls.push(oneBall);
-
                 } //掉落球结束
             }
         }
@@ -142,16 +167,48 @@ function draw(x, y, num, ctx, option) {
 
 //计算时间数组
 function getNumArr(arr) {
-    var h = new Date().getHours();
-    var m = new Date().getMinutes();
-    var s = new Date().getSeconds();
+    if (mode == "clock") {
+        var time = new Date();
+        var h = time.getHours();
+        var m = time.getMinutes();
+        var s = time.getSeconds();
+    } else {
+        if (mode == "ticking") {
+            if (on_off == "off") {
+                timeZt += 50;
+            }
+            var time = (endTime - new Date().getTime() + timeZt) / 1000;
+            if (time < 0) {
+                time = 0;
+                if (alt == 1) {
+                    alert("午时已到！");
+                    alt = 0;
+                }
+            }
+        } else if (mode == "timer") {
+            if (on_off == "off") {
+                timeZt += 50;
+            }
+            var time = (new Date().getTime() - startTime - timeZt) / 1000;
+            if (time > 360000) {
+                time = 359999;
+                if (alt == 1) {
+                    alert("你上天啦！");
+                    alt = 0;
+                }
+            }
+        }
+        var h = Math.floor(time / 3600);
+        var m = Math.floor(time % 3600 / 60)
+        var s = Math.floor(time % 60);
+    }
     //清空数组
     arr.length = 0;
     arr.push(Math.floor(h / 10));
     arr.push(Math.floor(h % 10));
     arr.push("mh");
     arr.push(Math.floor(m / 10));
-    arr.push(Math.floor(h % 10));
+    arr.push(Math.floor(m % 10));
     arr.push("mh");
     arr.push(Math.floor(s / 10));
     arr.push(Math.floor(s % 10));
