@@ -181,7 +181,7 @@ function getNumArr(arr) {
             if (time < 0) {
                 time = 0;
                 if (alt == 1) {
-                    alert("午时已到！");
+                    alert("午时已到 ╮(~▽~)╭");
                     alt = 0;
                 }
             }
@@ -193,7 +193,7 @@ function getNumArr(arr) {
             if (time > 360000) {
                 time = 359999;
                 if (alt == 1) {
-                    alert("你上天啦！");
+                    alert("你上天啦 ヽ(✿゜▽゜)ノ");
                     alt = 0;
                 }
             }

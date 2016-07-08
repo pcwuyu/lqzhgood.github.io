@@ -257,6 +257,24 @@
         
         
             
+             <li class="menu-item menu-item-demo">
+               <a href="/demo" rel="section">
+                
+                  <i class="menu-item-icon fa fa-folder fa-fw"></i> <br />
+                   
+                Demo
+              </a>
+            </li>
+            
+        
+        
+        
+      
+      
+        
+        
+        
+            
              <li class="menu-item menu-item-about">
                <a href="/about" rel="section">
                 
@@ -269,60 +287,12 @@
         
         
         
-      
-      
-        
-        
-        
-            
-             <li class="menu-item menu-item-demo">
-               <a href="/demo" rel="section">
-                
-                  <i class="menu-item-icon fa fa-folder fa-fw"></i> <br />
-                   
-                Demos
-              </a>
-            </li>
-            
-        
-        
-        
             
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="#" class="st-search-show-outputs">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
       
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  <form class="site-search-form">
-  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-</form>
-
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install', 'zvy_Ns547mCvoAxC4Dg8','2.0.0');
-</script>
-
-
-
-    </div>
   
 </nav>
 
@@ -335,6 +305,261 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/25/神奇的CSS/" itemprop="url">
+                  神奇的CSS
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-25T23:38:31+08:00" content="2016-05-25">
+              2016-05-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/study/" itemprop="url" rel="index">
+                    <span itemprop="name">study</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/25/神奇的CSS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/25/神奇的CSS/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <style>
+.tx {
+   color: #D55E4E;
+   background-color: #F9F2F4;
+   font-style: italic;
+}
+</style>
+
+<p>今天做简历的时候用到两列布局，收获两个 CSS 偏方。</p>
+<h2 id="两列等高布局"><a href="#两列等高布局" class="headerlink" title="两列等高布局"></a>两列等高布局</h2><p>先上代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="selector-class">.wrap</span>&#123;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">3px</span> solid <span class="number">#00C</span>;</span><br><span class="line">	<span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line">       </span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">           <span class="attribute">float</span>: left;</span><br><span class="line">           <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">           <span class="attribute">background</span>: <span class="number">#B0B0B0</span>;</span><br><span class="line">           <span class="attribute">padding-bottom</span>: <span class="number">2000px</span>;</span><br><span class="line">           <span class="attribute">margin-bottom</span>: -<span class="number">2000px</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">           <span class="attribute">float</span>: left;</span><br><span class="line">           <span class="attribute">width</span>: <span class="number">450px</span>;</span><br><span class="line">           <span class="attribute">background</span>: <span class="number">#6CC</span>;</span><br><span class="line">           <span class="attribute">padding-bottom</span>: <span class="number">2000px</span>;</span><br><span class="line">           <span class="attribute">margin-bottom</span>: -<span class="number">2000px</span>;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></p>
+<p>重点是 .left 和 .right 的 pading 和 <strong>-</strong>margin 的 bottom 足够大，看似是抵消，实则是用来撑大 wrap 的边界。然后奇迹发生了</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/25/神奇的CSS/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/24/HoHo无税到手/" itemprop="url">
+                  HoHo无税到手
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-24T21:28:28+08:00" content="2016-05-24">
+              2016-05-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/life/" itemprop="url" rel="index">
+                    <span itemprop="name">life</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/24/HoHo无税到手/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/24/HoHo无税到手/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><em>Updata 206.05.28</em></p>
+<p>无税到手，海关都没进，这次海运总计20天不到，又破纪录了。<br>想怕是都不敢买才有如此神速的吧。<br>Lucky~</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/24/HoHo无税到手/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -426,115 +651,10 @@
 
       
         
-          <p>　　好久没写东西了，太平淡的生活憋不出故事。每天就是看书睡觉，挺简单的，不知还能扛多久～<br>
+          <p>　　好久没写东西了，太平淡的生活憋不出故事。每天就是看书睡觉，挺简单的，不知还能扛多久～</p>
+<p>　　工欲善其事, 必先利其器。之前不管是VPS还是LOFTER总感不顺手。VPS是一家HK小服务商，没有后台全盘备份。linux不精，不敢瞎折腾,不然家里外网就挂了:&lt;　网易的LOFTER整天推广告/人体艺术，不务正业。现在搭在Github上总算是不用操心后端的事了，虽然Github很慢，被墙对我影响不大，却刚好符合我的想法，我只想安安静静写点东西罢了，搜索引擎的爬虫也禁了吧。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/20/Say-Hi/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/01/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-01T05:21:39+08:00" content="2016-05-01">
-              2016-05-01
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/01/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/01/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/01/hello-world/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -609,7 +729,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

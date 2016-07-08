@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://yoursite.com/.\nt3.jpg">
 <meta property="og:image" content="http://yoursite.com/.\nt4.jpg">
 <meta property="og:image" content="http://yoursite.com/.\ntty.png">
-<meta property="og:updated_time" content="2016-06-23T13:32:40.128Z">
+<meta property="og:updated_time" content="2016-06-30T01:53:46.719Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS原型链的继承">
 <meta name="twitter:description" content="在面向对象编程 JS 的原型链继承 这里卡几天了，觉得还是有必要把这个坑记下来。
@@ -269,6 +269,24 @@
         
         
             
+             <li class="menu-item menu-item-demo">
+               <a href="/demo" rel="section">
+                
+                  <i class="menu-item-icon fa fa-folder fa-fw"></i> <br />
+                   
+                Demo
+              </a>
+            </li>
+            
+        
+        
+        
+      
+      
+        
+        
+        
+            
              <li class="menu-item menu-item-about">
                <a href="/about" rel="section">
                 
@@ -281,60 +299,12 @@
         
         
         
-      
-      
-        
-        
-        
-            
-             <li class="menu-item menu-item-demo">
-               <a href="/demo" rel="section">
-                
-                  <i class="menu-item-icon fa fa-folder fa-fw"></i> <br />
-                   
-                Demos
-              </a>
-            </li>
-            
-        
-        
-        
             
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="#" class="st-search-show-outputs">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
       
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  <form class="site-search-form">
-  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-</form>
-
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install', 'zvy_Ns547mCvoAxC4Dg8','2.0.0');
-</script>
-
-
-
-    </div>
   
 </nav>
 
@@ -436,7 +406,7 @@
       
         <p>在面向对象编程 JS 的原型链继承 这里卡几天了，觉得还是有必要把这个坑记下来。</p>
 <h4 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h4><p>先从简单的例子来。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.y = <span class="number">2</span> ;            </span><br><span class="line">&#125;</span><br><span class="line">a.prototype.x=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> a();        </span><br><span class="line"></span><br><span class="line">b.y; <span class="comment">//2</span></span><br><span class="line">b.x; <span class="comment">//1</span></span><br></pre></td></tr></table></figure></p>
-<p>每个函数对象都有一个 <em>prototype</em> ，通过 <em>new</em> 创建的实例的原型会指向函数的 <em>prototype</em> ，也就是继承函数 <em>prototype</em> 的属性。其中 x 属性是 b 原型上继承的， y 属性是 b 上面的，具象化脑图为。 每个函数对象都有一个 <em>prototype</em> ，通过 <em>new</em> 创建的实例的原型会指向函数的 <em>prototype</em> ，也就是继承函数 <em>prototype</em> 的属性。其中 x 属性是 b 原型上继承的， y 属性是 b 上面的，具象化脑图为。▼</p>
+<p>每个函数对象都有一个 <em>prototype</em> ，通过 <em>new</em> 创建的实例的原型会指向函数的 <em>prototype</em> ，也就是继承函数 <em>prototype</em> 的属性。其中 x 属性是 b 原型上继承的， y 属性是 b 上面的，具象化脑图为。 每个函数对象都有一个 <em>prototype</em> ，通过 <em>new</em> 创建的实例的原型会指向函数的 <em>prototype</em> ，也就是继承函数 <em>prototype</em> 的属性。其中 x 属性是 b 原型上继承的， y 属性是 b 上面的，具象化脑图为。▼<br><a id="more"></a></p>
 <p><img src=".\nt1.jpg" alt="js1.jpg"></p>
 <p>b 可以查找到自身属性 y = 1；还可以通过原型链继承 a 函数 <em>prototype</em> 上的 x = 1; 以及 Obj 上的 <em>toString</em> 、 <em>valueOf</em> 等方法。 即原型链的继承。<br><strong>P.S <em> _proto </em> 仅为抽象属性(chrome)，用于上一层 <em>prototype</em> 的指针, 其他浏览器可以使用 obj.getPrototypeOf(obj) </strong></p>
 <hr>
@@ -493,6 +463,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/02/Dome-首页的优化/" rel="prev" title="Dome 首页的优化">
+                Dome 首页的优化 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -564,7 +538,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

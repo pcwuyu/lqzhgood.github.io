@@ -81,21 +81,18 @@
 
 
 <meta name="description" content="最近DNS老是解析错误，感觉 Chinadns 老挂啊。今天刚好休息，写个监控脚本解决下这个问题.
-好久没写 shell 脚本，被 JavaScript 的宽松语法惯坏了。一个 if then 结构都琢磨了一小时，最后发现 if 是接 [ ] 而不是 { } …… 真是郁闷
-12345678910111213141516171819202122232425262728293031323334353">
+好久没写 shell 脚本，被 JavaScript 的宽松语法惯坏了。一个 if then 结构都琢磨了一小时，最后发现 if 是接 [ ] 而不是 { } …… 真是郁闷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="外网监测脚本">
 <meta property="og:url" content="http://yoursite.com/2016/05/31/外网监测脚本/index.html">
 <meta property="og:site_name" content="你好，旅行者">
 <meta property="og:description" content="最近DNS老是解析错误，感觉 Chinadns 老挂啊。今天刚好休息，写个监控脚本解决下这个问题.
-好久没写 shell 脚本，被 JavaScript 的宽松语法惯坏了。一个 if then 结构都琢磨了一小时，最后发现 if 是接 [ ] 而不是 { } …… 真是郁闷
-12345678910111213141516171819202122232425262728293031323334353">
-<meta property="og:updated_time" content="2016-06-02T11:34:56.994Z">
+好久没写 shell 脚本，被 JavaScript 的宽松语法惯坏了。一个 if then 结构都琢磨了一小时，最后发现 if 是接 [ ] 而不是 { } …… 真是郁闷">
+<meta property="og:updated_time" content="2016-07-08T14:42:56.492Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="外网监测脚本">
 <meta name="twitter:description" content="最近DNS老是解析错误，感觉 Chinadns 老挂啊。今天刚好休息，写个监控脚本解决下这个问题.
-好久没写 shell 脚本，被 JavaScript 的宽松语法惯坏了。一个 if then 结构都琢磨了一小时，最后发现 if 是接 [ ] 而不是 { } …… 真是郁闷
-12345678910111213141516171819202122232425262728293031323334353">
+好久没写 shell 脚本，被 JavaScript 的宽松语法惯坏了。一个 if then 结构都琢磨了一小时，最后发现 if 是接 [ ] 而不是 { } …… 真是郁闷">
 
 
 
@@ -262,6 +259,24 @@
         
         
             
+             <li class="menu-item menu-item-demo">
+               <a href="/demo" rel="section">
+                
+                  <i class="menu-item-icon fa fa-folder fa-fw"></i> <br />
+                   
+                Demo
+              </a>
+            </li>
+            
+        
+        
+        
+      
+      
+        
+        
+        
+            
              <li class="menu-item menu-item-about">
                <a href="/about" rel="section">
                 
@@ -274,60 +289,12 @@
         
         
         
-      
-      
-        
-        
-        
-            
-             <li class="menu-item menu-item-demo">
-               <a href="/demo" rel="section">
-                
-                  <i class="menu-item-icon fa fa-folder fa-fw"></i> <br />
-                   
-                Demos
-              </a>
-            </li>
-            
-        
-        
-        
             
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="#" class="st-search-show-outputs">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
       
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  <form class="site-search-form">
-  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-</form>
-
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install', 'zvy_Ns547mCvoAxC4Dg8','2.0.0');
-</script>
-
-
-
-    </div>
   
 </nav>
 
@@ -428,8 +395,8 @@
 
       
         <p>最近DNS老是解析错误，感觉 Chinadns 老挂啊。今天刚好休息，写个监控脚本解决下这个问题.</p>
-<p>好久没写 shell 脚本，被 JavaScript 的宽松语法惯坏了。一个 if then 结构都琢磨了一小时，最后发现 if 是接 [ ] 而不是 { } …… 真是郁闷</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#开机多拨延迟100s</span></span><br><span class="line">sleep <span class="number">100</span></span><br><span class="line">DATE=`date +%Y-%m-%d-%H:%M:%S`</span><br><span class="line">tries=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">SS=<span class="number">0</span></span><br><span class="line">DNS=<span class="number">0</span></span><br><span class="line"><span class="comment">#固定IP地址 要确定域名对应的IP不会变 这里我写的自己VPS域名对应的IP</span></span><br><span class="line">ip2=<span class="string">"X.X.X.X"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo --- my_watchdog start ---</span><br><span class="line"><span class="keyword">while</span> [[ <span class="variable">$tries</span> <span class="nomarkup">-lt</span> <span class="number">5</span> ]]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="comment">#ss</span></span><br><span class="line">	wget -<span class="number">4</span> --spider --quiet --tries=<span class="number">1</span> --timeout=<span class="number">3</span> www.google.co.jp</span><br><span class="line">	<span class="keyword">if</span> [ <span class="string">"$?"</span> == <span class="string">"0"</span> ]; then</span><br><span class="line">		SS=<span class="number">0</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		wget -<span class="number">4</span> --spider --quiet --tries=<span class="number">1</span> --timeout=<span class="number">3</span> www.baidu.com</span><br><span class="line">		<span class="keyword">if</span> [ <span class="string">"$?"</span> == <span class="string">"0"</span> ]; then</span><br><span class="line">			echo <span class="variable">$DATE</span> Problem shadowsocks. SS <span class="variable">$tries</span> &gt;&gt; /root/log/ss1.log</span><br><span class="line">			SS=$((SS+<span class="number">1</span>))</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			echo  <span class="variable">$DATE</span> Network Problem. <span class="keyword">Do</span> nothing. SS <span class="variable">$tries</span> &gt;&gt; /root/log/ss1.log</span><br><span class="line">		fi</span><br><span class="line">	fi</span><br><span class="line"></span><br><span class="line"><span class="comment">#dns</span></span><br><span class="line">	ip=$(nslookup chh-hk.noip.me <span class="number">127.0</span>.<span class="number">0.1</span> | tail -<span class="number">1</span> | awk <span class="string">'&#123;print $3&#125;'</span>)</span><br><span class="line">	<span class="keyword">if</span> [ <span class="variable">$ip</span> == <span class="variable">$ip2</span> ]; then</span><br><span class="line">		DNS=<span class="number">0</span>		</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		DNS=$((DNS+<span class="number">1</span>))</span><br><span class="line">		echo <span class="variable">$DATE</span> Problem DNS. DNS <span class="variable">$tries</span> &gt;&gt; /root/log/ss1.log</span><br><span class="line">	fi</span><br><span class="line"></span><br><span class="line"><span class="comment">#restart</span></span><br><span class="line">	<span class="keyword">if</span> [ <span class="variable">$SS</span> == <span class="string">"0"</span> -a <span class="variable">$DNS</span> == <span class="string">"0"</span> ]; then</span><br><span class="line">                echo --- <span class="keyword">exit</span> ---</span><br><span class="line">                <span class="keyword">exit</span> <span class="number">0</span></span><br><span class="line">	fi</span><br><span class="line">	</span><br><span class="line">   tries=$((tries+<span class="number">1</span>))</span><br><span class="line">   sleep <span class="number">2</span></span><br><span class="line"></span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo <span class="variable">$DATE</span> restart &gt;&gt; /root/log/ss1.log</span><br><span class="line">/etc/init.d/shadowsocks restart</span><br><span class="line">/etc/init.d/dnsmasq restart</span><br><span class="line">/etc/init.d/chinadns restart</span><br></pre></td></tr></table></figure>
+<p>好久没写 shell 脚本，被 JavaScript 的宽松语法惯坏了。一个 if then 结构都琢磨了一小时，最后发现 if 是接 [ ] 而不是 { } …… 真是郁闷<br><a id="more"></a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="comment">#开机多拨延迟100s</span></span><br><span class="line">sleep 100</span><br><span class="line">DATE=`date +%Y-%m-%d-%H:%M:%S`</span><br><span class="line">tries=0</span><br><span class="line"></span><br><span class="line">SS=0</span><br><span class="line">DNS=0</span><br><span class="line"><span class="comment">#固定IP地址 要确定域名对应的IP不会变 这里我写的自己VPS域名对应的IP</span></span><br><span class="line">ip2=<span class="string">"X.X.X.X"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> --- my_watchdog start ---</span><br><span class="line"><span class="keyword">while</span> [[ <span class="variable">$tries</span> <span class="_">-lt</span> 5 ]]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="comment">#ss</span></span><br><span class="line">	wget -4 --spider --quiet --tries=1 --timeout=3 www.google.co.jp</span><br><span class="line">	<span class="keyword">if</span> [ <span class="string">"$?"</span> == <span class="string">"0"</span> ]; <span class="keyword">then</span></span><br><span class="line">		SS=0</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		wget -4 --spider --quiet --tries=1 --timeout=3 www.baidu.com</span><br><span class="line">		<span class="keyword">if</span> [ <span class="string">"$?"</span> == <span class="string">"0"</span> ]; <span class="keyword">then</span></span><br><span class="line">			<span class="built_in">echo</span> <span class="variable">$DATE</span> Problem shadowsocks. SS <span class="variable">$tries</span> &gt;&gt; /root/<span class="built_in">log</span>/ss1.log</span><br><span class="line">			SS=$((SS+1))</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">echo</span>  <span class="variable">$DATE</span> Network Problem. Do nothing. SS <span class="variable">$tries</span> &gt;&gt; /root/<span class="built_in">log</span>/ss1.log</span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#dns</span></span><br><span class="line">	ip=$(nslookup chh-hk.noip.me 127.0.0.1 | tail -1 | awk <span class="string">'&#123;print $3&#125;'</span>)</span><br><span class="line">	<span class="keyword">if</span> [ <span class="variable">$ip</span> == <span class="variable">$ip2</span> ]; <span class="keyword">then</span></span><br><span class="line">		DNS=0		</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		DNS=$((DNS+1))</span><br><span class="line">		<span class="built_in">echo</span> <span class="variable">$DATE</span> Problem DNS. DNS <span class="variable">$tries</span> &gt;&gt; /root/<span class="built_in">log</span>/ss1.log</span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#restart</span></span><br><span class="line">	<span class="keyword">if</span> [ <span class="variable">$SS</span> == <span class="string">"0"</span> <span class="_">-a</span> <span class="variable">$DNS</span> == <span class="string">"0"</span> ]; <span class="keyword">then</span></span><br><span class="line">                <span class="built_in">echo</span> --- <span class="built_in">exit</span> ---</span><br><span class="line">                <span class="built_in">exit</span> 0</span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">	</span><br><span class="line">   tries=$((tries+1))</span><br><span class="line">   sleep 2</span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$DATE</span> restart &gt;&gt; /root/<span class="built_in">log</span>/ss1.log</span><br><span class="line">/etc/init.d/shadowsocks restart</span><br><span class="line">/etc/init.d/dnsmasq restart</span><br><span class="line">/etc/init.d/chinadns restart</span><br></pre></td></tr></table></figure>
 <p>主要判断 SS 和 DNS 是否正常，如果正常则跳出，否则继续判断直到5次，5次不成功重启相关服务。<br>测试几天 以观后效。</p>
 
       
@@ -542,7 +509,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

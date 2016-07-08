@@ -19,8 +19,6 @@
            width: 990px;
            height: 100%;
            background-color: #F1EEE8;
-           -webkit-box-shadow: #282828 0px 0px 40px;
-           -moz-box-shadow: #282828 0px 0px 40px;
            box-shadow: #282828 0px 0px 40px;
        }
        
@@ -42,10 +40,10 @@
            width: 550px;
            color: #282828;
        }
-       
+
        #info p {
            color: #1D7D71;
-           font-size: 0.5em;
+           font-size: 12px;
        }
        
        #info #job {
@@ -79,7 +77,7 @@
            left: 50%;
            z-index: 3;
            margin-top: -4px;
-           height: 110px;
+           height: 141px;
            border: 1px dashed white;
            opacity: 0.5;
        }
@@ -109,7 +107,7 @@
        }
        
        #readme p {
-           font-size: 0.5em;
+           font-size: 0.7em;
        }
        
        #readme #readmeinfo {
@@ -121,8 +119,11 @@
        #readme #ques {
            display: inline-block;
            border: 1px solid;
-           border-radius: 10px;
-           font-size: 4px;
+           border-radius: 50%;
+           font-size: 0.7em;
+           width: 15px;
+           height: 15px;
+           text-align: center;
        }
        
        #readme #know {
@@ -132,7 +133,7 @@
        #readme #know span {
            display: inline-block;
            width: 20%;
-           font-size: 4px;
+           font-size: 0.7em;
        }
        
        #mail {
@@ -187,9 +188,24 @@
            text-decoration: none;
            /*           color: #6B6B6B;*/
            font-weight: bold;
-           font-size: 10px;
+           font-size: 12px;
        }
        
+       #agithub:hover::after {
+           content: "　应该要翻墙";
+           text-decoration: none;
+           /*           color: #6B6B6B;*/
+           font-weight: bold;
+           font-size: 12px;
+       }
+
+       #amail:hover::after {
+           content: "　立即领养";
+           text-decoration: none;
+           /*           color: #6B6B6B;*/
+           font-weight: bold;
+           font-size: 12px;
+       }
        #right p {
            margin: 10px 0 0 0;
            font-size: 0.9em;
@@ -226,7 +242,7 @@
            background-color: #5DC3B0;
            color: #f1eee8;
            font-weight: bold;
-           font-size: 10px;
+           font-size: 12px;
        }
        
        #right #study {
@@ -247,7 +263,7 @@
        
        #right #study .title {
            color: Rgb(29, 125, 113);
-           font-size: 5px;
+           font-size: 12px;
            line-height: 0;
        }
        

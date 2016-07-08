@@ -103,7 +103,7 @@
 今天做简历的时候用到两列布局，收获两个 CSS 偏方。
 两列等高布局先上代码12345678910111213141516171819202122 .wrap&amp;#123;	margin: 0 auto;	width: 600px;	b">
 <meta property="og:image" content="http://yoursite.com/./div.jpg">
-<meta property="og:updated_time" content="2016-05-28T13:51:58.292Z">
+<meta property="og:updated_time" content="2016-07-08T14:44:57.143Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="神奇的CSS">
 <meta name="twitter:description" content=".tx {
@@ -282,6 +282,24 @@
         
         
             
+             <li class="menu-item menu-item-demo">
+               <a href="/demo" rel="section">
+                
+                  <i class="menu-item-icon fa fa-folder fa-fw"></i> <br />
+                   
+                Demo
+              </a>
+            </li>
+            
+        
+        
+        
+      
+      
+        
+        
+        
+            
              <li class="menu-item menu-item-about">
                <a href="/about" rel="section">
                 
@@ -294,60 +312,12 @@
         
         
         
-      
-      
-        
-        
-        
-            
-             <li class="menu-item menu-item-demo">
-               <a href="/demo" rel="section">
-                
-                  <i class="menu-item-icon fa fa-folder fa-fw"></i> <br />
-                   
-                Demos
-              </a>
-            </li>
-            
-        
-        
-        
             
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="#" class="st-search-show-outputs">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
       
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  <form class="site-search-form">
-  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-</form>
-
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install', 'zvy_Ns547mCvoAxC4Dg8','2.0.0');
-</script>
-
-
-
-    </div>
   
 </nav>
 
@@ -458,6 +428,7 @@
 <p>今天做简历的时候用到两列布局，收获两个 CSS 偏方。</p>
 <h2 id="两列等高布局"><a href="#两列等高布局" class="headerlink" title="两列等高布局"></a>两列等高布局</h2><p>先上代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="selector-class">.wrap</span>&#123;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">3px</span> solid <span class="number">#00C</span>;</span><br><span class="line">	<span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line">       </span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">           <span class="attribute">float</span>: left;</span><br><span class="line">           <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">           <span class="attribute">background</span>: <span class="number">#B0B0B0</span>;</span><br><span class="line">           <span class="attribute">padding-bottom</span>: <span class="number">2000px</span>;</span><br><span class="line">           <span class="attribute">margin-bottom</span>: -<span class="number">2000px</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">           <span class="attribute">float</span>: left;</span><br><span class="line">           <span class="attribute">width</span>: <span class="number">450px</span>;</span><br><span class="line">           <span class="attribute">background</span>: <span class="number">#6CC</span>;</span><br><span class="line">           <span class="attribute">padding-bottom</span>: <span class="number">2000px</span>;</span><br><span class="line">           <span class="attribute">margin-bottom</span>: -<span class="number">2000px</span>;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></p>
 <p>重点是 .left 和 .right 的 pading 和 <strong>-</strong>margin 的 bottom 足够大，看似是抵消，实则是用来撑大 wrap 的边界。然后奇迹发生了</p>
+<a id="more"></a>
 <p><img src="./div.jpg" alt="Alt text"></p>
 <p>left 的边界并没有变大，但是颜色溢出到了 wrap 中，但是因为 <span class="tx"><em>overflow: hidden</em></span> 而被截断在 wrap 边界。只能认为是 CSS 认为 padding 无穷大，故背景色一直延伸，但是边框却因为 margin 和 padding 的抵消而未变化。这着实矛盾，百思不得其解。只能暂且认为 CSS 在判定边框的时候会综合考虑 padding 和 margin ，但是背景色仅会考虑 padding 所致，不过背景色本来就只考虑 padding 上着色，但严谨的来说，背景色不应该是用边框内来判定么，这是BUG？</p>
 <h2 id="伪类-伪元素实现强调特效"><a href="#伪类-伪元素实现强调特效" class="headerlink" title="伪类/伪元素实现强调特效"></a>伪类/伪元素实现强调特效</h2><p>CSS 两个伪类 :before 和 :after 一直认为仅用来添加文本，用于提示。今天看到还有用来做特效的，颇有颜文字的精髓，大开眼界。</p>
@@ -607,7 +578,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

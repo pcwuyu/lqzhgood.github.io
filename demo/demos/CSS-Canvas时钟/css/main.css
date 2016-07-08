@@ -1,6 +1,13 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../icomoon.woff') format('woff');
+}
 * {
     margin: 0;
     padding: 0;
+}
+*::-moz-selection{
+    color: white;
 }
 *::selection{
     color: white;
@@ -12,6 +19,7 @@ html {
 body {
     height: 100%;
     /*  background-color: #141219;*/
+    -webkit-transition: 1s;
     transition: 1s;
 }
 
@@ -33,14 +41,15 @@ body {
 #ry {
     margin: 0 auto;
     width: 40px;
+    -webkit-transition: 0.5s;
     transition: 0.5s;
 }
 
 #ry div{
+    overflow: hidden;
+    margin: 2px;   
     width: 40px;
     height: 40px;
-    margin: 2px;   
-    overflow: hidden;
 }
 
 #ry #sun:hover {
@@ -53,8 +62,8 @@ body {
 }
 #ss {
     position: absolute;
-    right: 2%;
     top: 3%;
+    right: 2%;
 }
 
 #switch {
@@ -170,7 +179,6 @@ body {
 #mode {
     position: absolute;
     left: 50%;
-    overflow: hidden;
     margin-left: -150px;
     width: 300px;
     border-radius: 5px;
@@ -185,7 +193,9 @@ body {
     background-color: rgb(185, 217, 245);
     box-shadow: 1px 2px 2px rgb(148, 191, 228);
     color: white;
-    line-height: 19px;
+	text-align: center;
+	font-family: "icomoon";
+    line-height: 18px;
     cursor: pointer;
 }
 
@@ -197,28 +207,38 @@ body {
 
 #dateInput {
     position: relative;
-    display: inline-block;
     display: none;
-    overflow: hidden;
-    margin: 3px auto;
+    font-size: 10px;
+    font-family: 'Tahoma';
+    line-height: 20px;
+/*    border-bottom-left-radius: 20px;*/    
+}
+#dateInput>div {
+	display: inline-block;
+	overflow: hidden;
+	margin: 3px auto;
     padding-left: 1px;
     height: 20px;
     border-radius: 20px;
     background-color: rgb(185, 217, 245);
     vertical-align: middle;
-    font-size: 10px;
-    font-family: Tahoma;
-    line-height: 20px;
-/*    border-bottom-left-radius: 20px;*/
 }
-
-#dateInput>* {
+#dateInput>div>* {
     float: left;
     margin: 0 5px;
     color: white;
 }
 
-#dateInput #go {
+
+#dateInput .info {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    color: rgb(122, 167, 208);
+    text-align: center;
+    font-family: 'Tahoma','微软雅黑';
+}
+#dateInput i {
     margin: 0;
     padding: 0 5px 0 5px;
     height: 20px;
@@ -232,12 +252,20 @@ body {
     cursor: pointer;
 }
 
-#dateInput #go::selection{
+#dateInput i::-moz-selection{
     color: white;
 }
 
-#dateInput #go:hover {
+#dateInput i::selection{
+    color: white;
+}
+
+#dateInput i:hover {
     color: #eee;
+}
+#dateInput .goWorry{
+    color: #eee;
+    cursor: default;
 }
 
 #dateInput input {
@@ -251,11 +279,17 @@ body {
     border: 0;
     background-color: rgb(148, 191, 228);
     box-shadow: 1px 2px 2px rgb(122, 167, 208) inset;
+    color: rgba(255,255,255,0.5);
     text-align: center;
     line-height: 20px;
 }
 
-
+#dateInput .focus{
+    color: white;
+}
+#dateInput .worry{
+    color: #FF4444;
+}
 #dateInput label {
     display: inline-block;
     height: 20px;
@@ -270,7 +304,10 @@ body {
     font-size: 14px;
     opacity: 1;
     cursor: pointer;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
     transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 #dateInput .year:hover {
@@ -278,6 +315,8 @@ body {
 }
 
 #dateInput .xz {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
     transform: rotate(360deg);
 }
 
@@ -309,6 +348,7 @@ body {
     background: rgb(148, 191, 228);
     box-shadow: inset 0px 1px 3px rgba(122, 167, 208, 0.5);
     cursor: pointer;
+    -webkit-transition: all .5s ease;
     transition: all .5s ease;
 }
 

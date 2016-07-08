@@ -4,7 +4,14 @@ $(function () {
     $('.toggle').click(function (e) {
         e.preventDefault(); // The flicker is a codepen thing
         $(this).toggleClass('toggle-on');
-        on_off == "on" ? on_off = "off" : on_off = "on";
+//        on_off == "on" ? on_off = "off" : on_off = "on";
+        if ( on_off == "on" ){
+            on_off = "off";
+            color =  "#ccc";
+        }else {
+            on_off = "on";
+            color =  "rgb(0,102,153)";
+        }
     });
     
     $("#ryWrap").click(function(){
@@ -60,6 +67,10 @@ $(function () {
     $("#go").click(function(){
         timeZt = 0;
         alt = 1;
+        //on按钮
+        $('.toggle').addClass('toggle-on');
+        on_off = "on";
+        color =  "rgb(0,102,153)";
         //按下效果
         $("#go").css({"backgroundColor":"rgb(122, 167, 208)"}).animate({height:20},100,function(){
             $("#go").css({"backgroundColor":"#B9D9F5"});
@@ -87,21 +98,72 @@ $(function () {
             endTime = (h+m+s)*1000 + new Date().getTime() ;
             }
         }else{
-            alert("输入不正确");
+            $("#info").html("输入不正确");
         }
-        
     });
+	
+	$("#go").mouseover(function(){
+		if ( $("#go").css("cursor") == "pointer"){
+			$("#dateInput input[type='text']").addClass("focus");
+		}
+	});
+	
+	$("#go").mouseout(function(){
+		$("#dateInput input[type='text']").removeClass("focus");
+	});
     
+	$("#dateInput input[type=text]").focusin(function(e){
+		$(this).addClass("focus");
+		$(this).trigger("keyup");
+	});
+	
+	$("#dateInput input[type=text]").focusout(function(e){
+		$(this).removeClass("focus");
+		if ($("#hour").val() == ""){
+			$("#hour").val("0");
+		}
+		if ($("#minute").val() == ""){
+			$("#minute").val("0");
+		}
+		if ($("#sec").val() == ""){
+			$("#sec").val("0");
+		}
+	});
+	
     $("#dateInput input[type=text]").keyup(function(e){
         if(e.target.id == "hour" ){            
-            if ( !($(this).val() >0  && $(this).val() < 99)){
-               alert("请输入0-99之间的数字");
+            if ( !($(this).val() >=0  && $(this).val() <= 99)){
+                $("#info_h").html("H: 请输入 0-99 之间的数字");
+                $(this).addClass("worry");
+                $("#go").addClass("goWorry");
+            }else{
+                $("#info_h").html("");
+                $(this).removeClass("worry");
+				if ($("#info_h").html()=="" &&$("#info_m").html()==""&&$("#info_s").html()==""){
+			   $("#go").removeClass("goWorry");
+		}
             }
         }
         if(e.target.id == "minute" || e.target.id == "sec"){
-            if ( !($(this).val() >0  && $(this).val() < 60)){
-               alert("请输入0-60之间的数字");
-            } 
+            if ( !($(this).val() >=0  && $(this).val() <= 60)){
+                $(this).addClass("worry");
+                $("#go").addClass("goWorry");
+				if (this.id == "minute"){
+					$("#info_m").html("M: 请输入 0-60 之间的数字");
+				}else if (this.id == "sec"){
+					$("#info_s").html("S: 请输入 0-60 之间的数字");
+				}
+            }else{
+                if (this.id == "minute"){
+					$("#info_m").html("");
+				}else if (this.id == "sec"){
+					$("#info_s").html("");
+				}
+                $(this).removeClass("worry");
+				if ($("#info_h").html()=="" &&$("#info_m").html()==""&&$("#info_s").html()==""){
+			   $("#go").removeClass("goWorry");
+		}
+            }
         }
     });
 
