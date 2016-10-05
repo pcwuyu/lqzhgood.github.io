@@ -16,12 +16,18 @@
         }
         
         #goHome {
-            margin: 0 auto;
-            margin-top: 50%;
-            width: 100px;
+            position: absolute;
+            bottom: 10%;
+            width: 100%;
             color: #fff;
             text-align: center;
             cursor: pointer;
+        }
+        
+        #goHome::selection,
+        #goHome ::selection {
+            background-color: aquamarine;
+            color: #fff;
         }
         
         span {
@@ -31,8 +37,8 @@
 </head>
 
 <body>
-    <p id='goHome'> Go Home
-        <br> <span> to find life </span> </p>
+    <p id='goHome'>Go Home
+        <br><span> to find life </span> </p>
     <script>
         window.onload = function () {
             document.getElementById("goHome").onclick = function () {
