@@ -8,7 +8,7 @@ var vm = new Vue({
         delNum: -1
     }, mounted() {
         this.$nextTick(function () {
-            this.$http.get('../data/cart.json').then(d => {
+            this.$http.get('./data/cart.json').then(d => {
                 let data = d.data.result.productList;
                 data.forEach((v, i) => {
                     v.ischecked = false;

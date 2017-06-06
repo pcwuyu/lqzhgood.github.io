@@ -16,7 +16,7 @@ var vm = new Vue({
     },
     mounted() {
         this.$nextTick(function () {
-            this.$http.get('../data/address.json').then(d => {
+            this.$http.get('./data/address.json').then(d => {
                 this.list = d.data.result;
             }).catch(err => {
                 console.log('err', err);
