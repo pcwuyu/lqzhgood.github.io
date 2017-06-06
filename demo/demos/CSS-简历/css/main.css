@@ -223,6 +223,19 @@ a:link {
     font-weight : bold;
     font-size : 12px;
 }
+#right {
+    position: relative;
+}
+
+#right .pdf {
+    position: absolute;
+    right: 0;
+    top:0;
+}
+
+#right .pdf a:link ,#right .pdf a:visited {
+   color: #327D71;
+}
 
 #right p {
     margin : 10px 0 0 0;
