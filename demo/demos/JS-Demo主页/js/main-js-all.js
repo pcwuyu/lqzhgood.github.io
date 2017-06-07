@@ -32,16 +32,16 @@ $(function () {
                 }, 750, function () {
                     $("#strip").css("background-color", _that[0].lcolor);
                     $("#strip").animate({
-                        width: 550
+                        width: '100%'
                     }, 750);
                 });
                 this.an = 1;
             }
         });
     });
-        //首页ALL点击标志位置1；
+    //首页ALL点击标志位置1；
     $(".idTabs>li")[0].an = "1";
-    
+
     getJs();
     function getJs() {
         var mb = "<li class='info clearfix'><div class='infoLeft'><a target='_blank' href='demos/{{name}}/'>{{name}}</a></div><div class='infoRight'><p class='demoInfo'>{{title}}</p><p class='demoGuest'><a target='_blank' href='demos/{{name}}/readme.md'>{{cont}}</a></p></div><div class='corner'><p><a href='https://github.com/lqzhgood/lqzhgood.github.io/tree/master/demo/demos/{{name}}/' target='_blank'>源码</a><span class='arrow'></span></p></div></li>"
@@ -49,6 +49,7 @@ $(function () {
         //计算demo总数        
         var sum = 0;
         var allDom = ""
+            , vueDom = ''
             , htmlDom = ""
             , jsDom = ""
             , othDom = "";
@@ -62,6 +63,9 @@ $(function () {
                 if (keyArry[i] == "HTML" || keyArry[i] == "CSS") {
                     htmlDom += _dom;
                 }
+                else if (keyArry[i] == "Vue") {
+                    vueDom += _dom;
+                }
                 else if (keyArry[i] == "JS") {
                     jsDom += _dom;
                 }
@@ -70,8 +74,10 @@ $(function () {
                 }
             }
         }
+
         //写入DOM
         $("#allDemo").html(allDom);
+        $("#vueDemo").html(vueDom);
         $("#htmlDemo").html(htmlDom);
         $("#jsDemo").html(jsDom);
         $("#otherDemo").html(othDom);

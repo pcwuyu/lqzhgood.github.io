@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Demo</title>
     <link rel="stylesheet" href="demos/JS-Demo主页/css/css.css">
-    <link rel="stylesheet" href="demos/JS-Demo主页/css/loading.css">
+    <meta name='viewport' content='width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0'>
 </head>
 
 <body>
@@ -22,9 +22,10 @@
         <div id="tabs">
             <ul class="idTabs">
                 <li><a href="#">All</a></li>
+                <li><a href="#">Vue</a></li>
                 <li><a href="#">HTML/CSS</a></li>
                 <li><a href="#">JS/JQ</a></li>
-                <li><a href="#">OTHER</a></li>
+                <li><a href="#">Old</a></li>
                 <span>*</span>
             </ul>
             <div id="shuoming">仅基于PC.Chrome.50测试通过<br>Sum: <span></span></div>
@@ -33,6 +34,10 @@
             <div id="All" class="demo">
                 <h4>ALL</h4>
                 <ul id="allDemo"></ul>
+            </div>
+            <div id="Vue" class="demo">
+                <h4>Vue</h4>
+                <ul id="vueDemo"></ul>
             </div>
             <div id="HTMLCSS" class="demo">
                 <h4>HTML/CSS</h4>
@@ -50,7 +55,7 @@
         </div>
     </div>
     <script src="demos/JS-Demo主页/js/jquery-2.2.3.min.js"></script>
-    <script src="demos/list.js"></script>
+    <script src="demos/list.json"></script>
     <script src="demos/JS-Demo主页/js/main-js-all.js"></script>
 </body>
 
